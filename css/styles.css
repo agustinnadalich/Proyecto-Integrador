@@ -1,0 +1,28 @@
+.navbar{
+  background-color: rgb(247, 87, 177);
+  padding: 1% 0;
+  font-size: 1.2em;
+}
+
+.navbar-nav{
+  border: 2px black solid;
+  color: red;
+}
+
+.nav-link{
+  color: rgb(255, 230, 0);
+}
+
+
+footer{
+  width: 100%;
+  background-color: rgb(247, 87, 177);
+  padding: 3%;
+  color: white;
+  border: 2px black solid;
+}
+
+h3 a{
+  border: black solid 2px;
+  color: white;  
+}
