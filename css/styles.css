@@ -1,3 +1,21 @@
+@import url('normalize.com');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+		font-family: 'Montserrat', sans-serif;
+}
+
+.login input:hover {
+  background-color: rgb(247, 87, 177);
+}
+
+
 .navbar{
   background-color: rgb(247, 87, 177);
   padding: 1% 0;
@@ -24,5 +42,5 @@ footer{
 
 h3 a{
   border: black solid 2px;
-  color: white;  
+  color: white;
 }
