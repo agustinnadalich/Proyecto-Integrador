@@ -1,0 +1,25 @@
+@import url('normalize.css');
+
+
+* {
+	box-sizing: border-box;
+}
+
+  ul, ol {
+  	list-style: none;
+  	padding: 0;
+  	margin: 0;
+  }
+
+  a {
+  	display: inline-block;
+  	text-decoration: none;
+  	color: inherit;
+    }
+  img {
+  	width: 100%;
+  }
+  .container{
+    width: 95%;
+    margin: auto;
+    }
