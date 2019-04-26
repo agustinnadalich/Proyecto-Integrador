@@ -30,12 +30,19 @@
 	h1{
 		text-align: center;
 	}
-
 	.recepcion{
+		background-image: url(../manos-juntas.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		/* background-color: lightblue; */
 		display: table-cell;
 		text-align: center;
 		vertical-align: middle;
-		/* height: 400px; */
+		height: 400px;
+		color: white;
+		font-weight: bold;
 	}
 
 .mapa-google{
