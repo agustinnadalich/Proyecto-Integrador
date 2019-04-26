@@ -1,8 +1,12 @@
 @import url('normalize.css');
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 
 
 * {
 	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+
 }
 
   ul, ol {
@@ -19,7 +23,60 @@
   img {
   	width: 100%;
   }
-  .container{
+	.container{
     width: 95%;
     margin: auto;
     }
+	h1{
+		text-align: center;
+	}
+
+	.recepcion{
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		/* height: 400px; */
+	}
+
+.mapa-google{
+	width: 100%;
+	position: absolute;
+	align-self: center;
+	position: relative;
+}
+.mapa{
+	width: 100%;
+	position: relative;
+}
+
+.carac{
+	display: inline-block;
+	margin: 10px;
+	/* height: 400px; */
+	text-align: center;
+	}
+.carac{
+	box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+	transition: transform 300ms, box-shadow 300ms;
+}
+.estad{
+	display: inline-block;
+	margin: 10px;
+	text-align: center;
+	}
+.estad{
+	box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+	transition: transform 300ms, box-shadow 300ms;
+}
+.carac:hover{
+	/* transform: scale(1.1); */
+	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
+}
+.estad:hover{
+	/* transform: scale(1.1); */
+	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
+}
+* {
+	font-family: 'Montserrat', sans-serif;
+
+}

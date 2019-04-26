@@ -1,0 +1,30 @@
+@import url('normalize.css');
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+* {
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+  ul, ol {
+  	list-style: none;
+  	padding: 0;
+  	margin: 0;
+  }
+
+  a {
+  	display: inline-block;
+  	text-decoration: none;
+  	color: inherit;
+    }
+  img {
+  	width: 100%;
+  }
+  .container{
+    width: 95%;
+    margin: auto;
+    }
+		h1{
+			text-align: center;
+		}
