@@ -105,3 +105,11 @@ h3{
 	height: 100px;
 	width: 100px;
 }
+
+
+.contact{
+	width: 70%;
+	position: absolute;
+	left: 5%;
+	top: 50px;
+}
