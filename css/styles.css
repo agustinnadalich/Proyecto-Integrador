@@ -1,5 +1,5 @@
 @import url('normalize.com');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 
 * {
@@ -17,7 +17,18 @@
 
 
 body {
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Montserrat 400', sans-serif;
+}
+
+p {
+	font-family: 'Montserrat 400', sans-serif;
+	color:#353535;º
+}
+
+
+h1 h2 {
+	font-family: 'Montserrat 800', sans-serif;
+	color: #F95543;
 }
 
 .nav-link:hover {
