@@ -28,3 +28,13 @@
 		h1{
 			text-align: center;
 		}
+button{
+			text-decoration: none;
+		}
+.btn-link{
+	color: black;
+}
+.btn-link:hover{
+	color: black;
+	font-weight: bold;
+}
