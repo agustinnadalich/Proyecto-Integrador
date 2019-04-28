@@ -6,13 +6,22 @@
 	box-sizing: border-box;
 }
 
+.a_btn  {
+	text-decoration: none;
+	font-family: Montserrat, sans-serif;
+	color: rgb(255, 255, 255);
+	padding: 10px;
+	border-radius: 30px;
+	background: linear-gradient(135deg, rgb(247,85,77) 0%,rgb(242,104,46) 51%,rgb(206,53,104) 99%);
+}
+
 
 body {
 		font-family: 'Montserrat', sans-serif;
 }
 
-.login input:hover {
-  background-color: rgb(247, 87, 177);
+.nav-link:hover {
+  color: linear-gradient(135deg, rgb(247,85,77) 0%,rgb(242,104,46) 51%,rgb(206,53,104) 99%);
 }
 
 
@@ -27,9 +36,7 @@ body {
   color: red;
 }
 
-.nav-link{
-  color: rgb(255, 230, 0);
-}
+
 
 
 footer{
