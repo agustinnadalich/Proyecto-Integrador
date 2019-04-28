@@ -77,11 +77,11 @@
 }
 .carac:hover{
 	/* transform: scale(1.1); */
-	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
+	box-shadow: 0 15px 30px rgba(67, 74, 83, 2.5);
 }
 .estad:hover{
 	/* transform: scale(1.1); */
-	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
+	box-shadow: 0 15px 30px rgba(67, 74, 83, 2.5);
 }
 * {
 	font-family: 'Montserrat', sans-serif;
