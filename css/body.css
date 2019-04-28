@@ -1,6 +1,6 @@
 @import url('normalize.css');
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 
 * {
@@ -23,26 +23,43 @@
   img {
   	width: 100%;
   }
+	h1, h2, h3{
+		color: #F95543;
+		font-family: 'Montserrat 800', sans-serif;
+		font-weight: 800;
+	}
+	p{
+		color: #353535;
+		font-family: 'Montserrat 400', sans-serif;
+		font-weight: 400;
+	}
 	.container{
     width: 95%;
     margin: auto;
     }
-	h1{
-		text-align: center;
-	}
+
 	.recepcion{
-		background-image: url(../manos-juntas.jpg);
+		background-image: url(../img/manos_home.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-
-		/* background-color: lightblue; */
-		display: table-cell;
-		text-align: center;
-		vertical-align: middle;
-		height: 400px;
+		width: 100%;
+		height: 100vh;
+		max-height: 950px;
 		color: white;
 		font-weight: bold;
+		position: relative;
+	}
+	.titulo_recepcion{
+		/* font-family: 'Montserrat 800', sans-serif; */
+    /* max-width: 44%; */
+    position: relative;
+    top: 42.5vh;
+    font-size: 1.83em;
+    /* color: #F95543; */
+    /* font-weight: 800; */
+    margin-left: 5%;
+		text-shadow: 2px 2px 4px white;
 	}
 
 .mapa-google{
@@ -55,35 +72,40 @@
 	width: 100%;
 	position: relative;
 }
-
-.carac{
-	display: inline-block;
-	margin: 10px;
-	/* height: 400px; */
-	text-align: center;
-	}
-.carac{
-	box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-	transition: transform 300ms, box-shadow 300ms;
+.caracteristicas{
+	/* width: 100%; */
+	justify-content: space-between;
+	margin:0;
 }
-.estad{
+.carac{
 	display: inline-block;
-	margin: 10px;
+	/* margin: 10px; */
 	text-align: center;
-	}
-.estad{
+	padding: 15px;
 	box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 	transition: transform 300ms, box-shadow 300ms;
 }
 .carac:hover{
-	/* transform: scale(1.1); */
 	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
 }
-.estad:hover{
-	/* transform: scale(1.1); */
-	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
-}
-* {
-	font-family: 'Montserrat', sans-serif;
+.titulo_estadistica{
+	font-size: 3.5em;
 
 }
+.estadisticas{
+	margin: 0;
+	justify-content: center;
+}
+.estad{
+	margin: 1%;
+	display: inline-block;
+
+	/* margin: 10px; */
+	text-align: center;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+	transition: transform 300ms, box-shadow 300ms;
+}
+/* .estad:hover{ */
+	/* transform: scale(1.1); */
+	/* box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
+} */
