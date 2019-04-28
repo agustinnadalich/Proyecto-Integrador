@@ -22,7 +22,7 @@ body {
 
 p {
 	font-family: 'Montserrat 400', sans-serif;
-	color:#353535;º
+	color:#353535;
 }
 
 
@@ -37,7 +37,7 @@ h1 h2 {
 
 
 .navbar{
-  background-color: rgb(247, 87, 177);
+  background-color: #EBCCB6;
   padding: 1% 0;
   font-size: 1.2em;
 }
