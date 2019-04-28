@@ -49,18 +49,16 @@ h1 h2 {
 }
 
 .recepcion{
-	position: relative;
-	left: 25%;
-	right: 25%;
-	width: 100%;
 	background-image: url(../manos-juntas.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	/* background-color: lightblue; */
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
-	height: 300px;
+	height: 400px;
 	color: white;
 	font-weight: bold;
 }
@@ -71,6 +69,7 @@ h1 h2 {
 }
 
 footer{
+	height: 200px;
   width: 100%;
   background-color: #EBCCB6;
   padding: 3%;
@@ -100,4 +99,9 @@ h3{
 .bordes{
 	border-left: 2px solid rgb(232, 81, 81);
 	border-right: 2px solid rgb(232, 81, 81);
+}
+
+.logofoot{
+	height: 100px;
+	width: 100px;
 }
