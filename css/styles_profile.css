@@ -19,6 +19,7 @@
 body {
 		font-family: 'Montserrat 400', sans-serif;
     color: #353535;
+		text-align: center;
 }
 
 p {
@@ -40,6 +41,8 @@ h2 {
 }
 
 .profile_pic {
-
+width: 15%;
+height: 15%;
+margin-top: 20px;
 
 }

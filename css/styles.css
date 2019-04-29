@@ -77,17 +77,17 @@ h1 h2 {
 }
 
 footer{
-	height: 200px;
+	height: 130px;
   width: 100%;
   background-color: #EBCCB6;
-  padding: 3%;
   color: rgb(232, 81, 81);
+	border-radius: 60% 60% 0 0;
 }
 
 
 .social a{
   color: rgb(232, 81, 81);
-	margin-top: 50px;
+	margin-top: 30px;
 	padding: 5px;
 	display: inline-flex;
 	justify-content: center;
@@ -110,14 +110,29 @@ h3{
 }
 
 .logofoot{
-	height: 100px;
-	width: 100px;
+	margin-top: 5%;
+	height: 80px;
+	width: 80px;
 }
 
-
 .contact{
+	margin-left: 20px;
+	margin-top: 20px;
 	width: 70%;
-	position: absolute;
-	left: 5%;
-	top: 50px;
+}
+
+.fa{
+	font-size: 50px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.formlogin {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.formsignup{
+	text-align: center;
+	margin-top: 20px;
 }
