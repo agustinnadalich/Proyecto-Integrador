@@ -1,0 +1,45 @@
+@import url('normalize.com');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+* {
+	box-sizing: border-box;
+}
+
+.a_btn  {
+	text-decoration: none;
+	font-family: 'Montserrat 400', sans-serif;
+	color: rgb(255, 255, 255);
+	padding: 10px;
+	border-radius: 30px;
+	background: linear-gradient(135deg, rgb(247,85,77) 0%,rgb(242,104,46) 51%,rgb(206,53,104) 99%);
+}
+
+
+body {
+		font-family: 'Montserrat 400', sans-serif;
+    color: #353535;
+}
+
+p {
+	font-family: 'Montserrat 400', sans-serif;
+  font-size: 1em;
+	color:#353535;
+}
+
+
+h2 {
+	font-family: 'Montserrat 800', sans-serif;
+  font-size: 2em;
+	color: #F95543;
+}
+
+.form_container {
+  input width: 100%;
+  border-radius: 5px;
+}
+
+.profile_pic {
+
+
+}

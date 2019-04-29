@@ -8,6 +8,15 @@
 	src: url('fonts/starjedi_allfont_net.woff2') format('woff2');
 	font-weight: normal;
 }
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+p{
+	font-family: 'Montserrat 400', sans-serif;
+}
+
+h1, h2 , h3{
+	font-family: 'Montserrat 800', sans-serif;
+}
 
 *{
   box-sizing: border-box;
@@ -25,10 +34,6 @@
 768 -> 991 : col-md-XX
 992 -> 1200 : col-lg-XX
 1201 -> ... : col-xl-XX */
-
-body{
-  font-family: 'Star Jedi', arial;
-}
 
 ul, ol{
   padding: 0;

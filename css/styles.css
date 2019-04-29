@@ -1,14 +1,16 @@
 @import url('normalize.com');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 
 * {
 	box-sizing: border-box;
-}
+	font-family: 'Montserrat', sans-serif;
+
+	}
 
 .a_btn  {
 	text-decoration: none;
-	font-family: Montserrat, sans-serif;
+	font-family: 'Montserrat 400', sans-serif;
 	color: rgb(255, 255, 255);
 	padding: 10px;
 	border-radius: 30px;
@@ -17,7 +19,18 @@
 
 
 body {
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Montserrat 400', sans-serif;
+}
+
+p {
+	font-family: 'Montserrat 400', sans-serif;
+	color:#353535;
+}
+
+
+h1 h2 {
+	font-family: 'Montserrat 800', sans-serif;
+	color: #F95543;
 }
 
 .nav-link:hover {
@@ -26,28 +39,77 @@ body {
 
 
 .navbar{
-  background-color: rgb(247, 87, 177);
+  background-color: #EBCCB6;
   padding: 1% 0;
   font-size: 1.2em;
 }
 
-.navbar-nav{
-  border: 2px black solid;
-  color: red;
+.navbar-nav a{
+  color: rgb(232, 81, 81);
+}
+
+.recepcion{
+	background-image: url(../manos-juntas.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-color: lightblue; */
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 400px;
+	color: white;
+	font-weight: bold;
 }
 
 
-
+.btn{
+	color: rgb(232, 81, 81);
+}
 
 footer{
+	height: 200px;
   width: 100%;
-  background-color: rgb(247, 87, 177);
+  background-color: #EBCCB6;
   padding: 3%;
-  color: white;
-  border: 2px black solid;
+  color: rgb(232, 81, 81);
 }
 
-h3 a{
-  border: black solid 2px;
-  color: white;
+
+.social a{
+  color: rgb(232, 81, 81);
+	margin-top: 50px;
+	padding: 5px;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.contacto a{
+	color: rgb(232, 81, 81);
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+}
+
+h3{
+	margin-top: 50px;
+}
+
+.bordes{
+	border-left: 2px solid rgb(232, 81, 81);
+	border-right: 2px solid rgb(232, 81, 81);
+}
+
+.logofoot{
+	height: 100px;
+	width: 100px;
+}
+
+
+.contact{
+	width: 70%;
+	position: absolute;
+	left: 5%;
+	top: 50px;
 }
