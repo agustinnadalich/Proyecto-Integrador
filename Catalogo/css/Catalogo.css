@@ -53,7 +53,7 @@ ul, ol{
   list-style: none;
 }
 
-ul li:hover {
+.elemento-lista-de-filtros:hover {
  background:black;
 }
 
