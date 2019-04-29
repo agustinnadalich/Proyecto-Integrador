@@ -10,6 +10,30 @@
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+.navbar{
+  background-color: #EBCCB6;
+  padding: 1% 0;
+  font-size: 1.2em;
+}
+
+.navbar-nav a{
+  color: rgb(232, 81, 81);
+}
+
+.nav-link:hover {
+  color: linear-gradient(135deg, rgb(247,85,77) 0%,rgb(242,104,46) 51%,rgb(206,53,104) 99%);
+}
+
+
+
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color: inherit;
+	font-family: 'Montserrat 400', sans-serif;
+}
+
 p{
 	font-family: 'Montserrat 400', sans-serif;
 }
@@ -24,7 +48,7 @@ h1, h2 , h3{
 
 /* para que se vean las columnas  */
 [class*=col-]{
-	border: dotted 1px green;
+	/* border: dotted 1px green;   */
 }
 /* para que se vean las columnas */
 
@@ -41,6 +65,10 @@ ul, ol{
   list-style: none;
 }
 
+ul li:hover {
+ background:black;
+}
+
 img{
   width: 100%;
 }
@@ -48,13 +76,13 @@ img{
 /* reseteo  */
 
 .container-prueba {
-  border: dashed 3px black;
+  /* border: dashed 3px black; */
 }
 
 /* temporal */
 
 .container-general{
-	border: solid 1px brown;
+	/* border: solid 1px brown; */
 }
 
 .hr-1{
@@ -66,9 +94,21 @@ img{
 }
 
 .container-filtros{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .container-productos{
-  border: solid 3px black;
+  /* border: solid 3px black; */
+}
+
+.carac{
+	display: inline-block;
+	/* margin: 10px; */
+	text-align: center;
+	padding: 15px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+	transition: transform 300ms, box-shadow 300ms;
+}
+.carac:hover{
+	box-shadow: 0 15px 70px rgba(0, 0, 0, 2.5);
 }

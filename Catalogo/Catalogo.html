@@ -19,25 +19,95 @@
     <!-- linkeo hoja estilos  -->
   </head>
   <body>
-    <div class="container container-prueba">
+
+
       <header>
-        <h1>Catalogo</h1>
-        <h3>En este lugar iria la navvar principal</h3>
-        <p>Parrafo de prueba</p>
+
+
+
+
+
+        <nav class="navbar navbar-expand-md sticky-top" role="navitation">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target">
+            <span class="navbar-toggler-icon"><img src="img/hambg.png" height="30" width="30"></span>
+          </button>
+                            <!-- Look Empresa -->
+
+        <div class="collapse navbar-collapse" id="collapse_target">
+          <a class="navbar-brand"><img src="img/logo_JM.png" height="50" width="50"></a>
+          <span class="navbar-text">User Name</span>
+
+                            <!-- links navbar -->
+
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target">Menu
+                <span class="caret"></span>
+               </a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                <a href="body.html" class="dropdown-item">Nosotros</a>
+                <div class="dropdown-divider"></div>
+                <a href="contacto.html" class="dropdown-item">Contacto</a>
+                <a href="faq.html" class="dropdown-item">FAQ</a>
+              </div>
+
+             </li>
+             <li class="nav-item">
+               <a href="login.html" class="nav-link">Ingresar</a>
+             </li>
+             <li class="nav-item">
+               <a href="signup.html" class="nav-link">Registrarse</a>
+             </li>
+           </ul>
+          </div>
+
+            <form class="form-inline my-2 my-lg-0">
+           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+           </form>
+
+         </nav>
+
+
+
+
+
+
+
       </header>
-    </div>
+
+
   <div class="container container-general">
   <div class="row">
       <div class="container container-filtros col-2">
+      <div class="row">
+        <div class="col-10">
       <p>Este es el container filtros</p>
+      <nav>
+        <ul>
+        <ul>
+          <li><a href="#">Elemento 1</a></li>
+          <li><a href="#">Elemento 2</a></li>
+          <li><a href="#">Elemento 3</a></li>
+          <li><a href="#">Elemento 4</a></li>
+          <li><a href="#">Elemento 5</a></li>
+          <li><a href="#">Elemento 6</a></li>
+        </ul>
+        </ul>
+      </nav>
+        </div>
+        <div class="col-2">
       <hr class="hr-1">
+        </div>
+      </div>
       </div>
       <div class="container container-productos col-10">
         <p>Este es el container productos</p>
         <!-- 3 columnas  -->
         <div class="row">
         <!-- 1 columna -->
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-4 carac">
           <article class="article">
             <img src="img/rebel-symbol.jpg" alt="Etiqueta producto 1">
             <h2>Nombre producto 1</h2>
@@ -46,7 +116,7 @@
         </div>
         <!-- 1 columna -->
         <!-- 2 columna -->
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-4 carac">
           <article class="article">
             <img src="img/S_3717-MLM49050938_9284-O.jpg" alt="Etiqueta producto 2">
             <h2>Nombre producto 2</h2>
@@ -55,7 +125,7 @@
         </div>
         <!-- 2 columna -->
         <!-- 3 columna -->
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-4 carac">
           <article class="article">
             <img src="img/imperialseal.jpg" alt="Etiqueta producto 3">
             <h2>Nombre producto 3</h2>
@@ -63,6 +133,15 @@
           </article>
         </div>
         <!-- 3 columna -->
+        <!-- 4 columna -->
+        <div class="col-6 col-md-4 carac">
+          <article class="article">
+            <img src="img/imperialseal.jpg" alt="Etiqueta producto 3">
+            <h2>Nombre producto 4</h2>
+            <p>Descripcion producto 4</p>
+          </article>
+        </div>
+        <!-- 4 columna -->
       </div>
       <!-- 3 columnas -->
       </div>
