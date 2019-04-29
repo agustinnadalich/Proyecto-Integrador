@@ -21,20 +21,30 @@
   img {
   	width: 100%;
   }
+	.logo_JM{
+		width: 80px;
+    height: 70px;
+    margin-left: 20px;
+	}
+	.btn_busqueda{
+		border-color:#F95543;
+	}
   .container{
     width: 95%;
-    margin: auto;
-    }
+		margin: auto;
+		margin-bottom: 20px;
+		}
 		h1{
 			text-align: center;
 		}
 button{
 			text-decoration: none;
 		}
-.btn-link{
-	color: black;
+.btn-preg-faq{
+	color: #F95543;
+
 }
-.btn-link:hover{
-	color: black;
+.btn-preg-faq:hover{
+	color: #F95543;
 	font-weight: bold;
 }

@@ -36,6 +36,11 @@ h1 h2 {
 .nav-link:hover {
   color: linear-gradient(135deg, rgb(247,85,77) 0%,rgb(242,104,46) 51%,rgb(206,53,104) 99%);
 }
+.logo_JM{
+	width: 80px;
+	height: 70px;
+	margin-left: 20px;
+}
 
 
 .navbar{
@@ -46,6 +51,9 @@ h1 h2 {
 
 .navbar-nav a{
   color: rgb(232, 81, 81);
+}
+.btn_busqueda{
+	border-color:#F95543;
 }
 
 .recepcion{
