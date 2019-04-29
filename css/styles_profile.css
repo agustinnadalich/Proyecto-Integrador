@@ -17,6 +17,10 @@
 
 }
 
+html,
+body {
+    height: 100%;
+}
 
 body {
 		font-family: 'Montserrat 400', sans-serif;
