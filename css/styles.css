@@ -136,3 +136,10 @@ h3{
 	text-align: center;
 	margin-top: 20px;
 }
+.contact{
+	width: 90%;
+	min-height: 50vh;
+	margin: auto;
+	margin-top: 10vh;
+	text-align: center;
+}

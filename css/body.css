@@ -39,28 +39,37 @@
     }
 
 	.recepcion{
+		align-self: center;
 		background-image: url(../img/manos_home.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
-		height: 100vh;
+		height: 60vh;
 		max-height: 950px;
 		color: white;
 		font-weight: bold;
 		position: relative;
+		display: inline-flex;
 	}
 	.titulo_recepcion{
 		/* font-family: 'Montserrat 800', sans-serif; */
     /* max-width: 44%; */
-    position: relative;
-    top: 42.5vh;
-    font-size: 1.83em;
+    position: absolute;
+    /* top: 30vh; */
+    /* bottom: 10vh; */
+    font-size: 2.5em;
     /* color: #F95543; */
     /* font-weight: 800; */
-    margin-left: 5%;
-		text-shadow: 2px 2px 4px white;
+    margin: 10% 57% 0% 5%;
+    text-shadow: 2px 2px 4px white;
+    /* bottom: 1px; */
 	}
+	@media (max-width: 600px){
+		.titulo_recepcion{
+			bottom: 15vh;
+			margin: 0% 5% 0% 5%;
+		}}
 
 .mapa-google{
 	width: 100%;
@@ -120,5 +129,8 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 
+}
+.links_footer{
+	font-weight: normal;
 }
 >>>>>>> c0deb2ce9e7b93606a8dc1245961abe32cf62bea

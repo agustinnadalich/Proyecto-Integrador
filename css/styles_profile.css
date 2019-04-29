@@ -37,18 +37,37 @@ h2 {
 	color: #F95543;
 }
 
-<<<<<<< HEAD
-=======
+
 .form_container {
   input width: 100%;
   border-radius: 5px;
 }
-
+.formlogin{
+	min-height: 50vh;
+	margin-top: 10vh;
+}
+.formregistro{
+	text-align: center;
+	min-height: 50vh;
+	margin-top: 10vh;
+}
+.textoform{
+	min-width: 130px;
+}
 .profile_pic {
 width: 15%;
 height: 15%;
 margin-top: 20px;
->>>>>>> e5d23392de3d426648c6e58d2e41c64cf08d793c
+}
+.profile_container{
+	width: 95%;
+	margin: auto;
+	min-height: 50vh;
+	margin-top: 05px;
+}
+.donacion{
+	margin-top: 10vh;
+}
 
 .container {
   margin: 20px;
