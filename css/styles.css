@@ -17,9 +17,10 @@
 	background: linear-gradient(135deg, rgb(247,85,77) 0%,rgb(242,104,46) 51%,rgb(206,53,104) 99%);
 }
 
-
+html,
 body {
 		font-family: 'Montserrat 400', sans-serif;
+    height: 100%;
 }
 html, body{
 	min-height: 100%;

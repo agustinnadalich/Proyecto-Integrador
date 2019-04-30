@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 /* para que se vean las columnas  */
 [class*=col-]{
 	border: dotted 1px green;
