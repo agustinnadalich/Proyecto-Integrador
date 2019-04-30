@@ -29,6 +29,21 @@ body {
 	html, body{
 		min-height: 100%;
 	}
+	.btn_busqueda:hover {
+		color: #fff;
+		background-color: #F95543;
+		border-color: #F95543;
+		}
+		.btn_busqueda:focus {
+		box-shadow: 0 0 0 0.2rem #F95543;
+}
+		.btn_busqueda:active:focus,
+		.btn_busqueda:active {
+			color: #fff;
+			background-color: #F95543!important;
+			border-color: #F95543!important;
+			box-shadow: 0 0 0 0.2rem #F95543!important;
+			}
 	.logo_JM{
 		width: 80px;
     height: 70px;
