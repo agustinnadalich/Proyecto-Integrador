@@ -25,7 +25,9 @@
 768 -> 991 : col-md-XX
 992 -> 1200 : col-lg-XX
 1201 -> ... : col-xl-XX */
-
+html, body{
+	height: 100%;
+}
 body{
   font-family: 'Star Jedi', arial;
 }

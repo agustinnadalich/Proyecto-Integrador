@@ -33,6 +33,9 @@
 		font-family: 'Montserrat 400', sans-serif;
 		font-weight: 400;
 	}
+	html, body{
+		height: 100%;
+	}
 	.container{
     width: 95%;
     margin: auto;

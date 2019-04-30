@@ -23,6 +23,9 @@ body {
     color: #353535;
 		text-align: center;
 }
+html, body{
+	height: 100vh;
+}
 
 p {
 	font-family: 'Montserrat 400', sans-serif;
@@ -71,4 +74,8 @@ margin-top: 20px;
 
 .container {
   margin: 20px;
+}
+footer{
+	position: absolute;
+	bottom: 0px;
 }

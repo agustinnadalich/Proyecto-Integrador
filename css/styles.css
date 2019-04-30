@@ -21,7 +21,9 @@
 body {
 		font-family: 'Montserrat 400', sans-serif;
 }
-
+html, body{
+	min-height: 100%;
+}
 p {
 	font-family: 'Montserrat 400', sans-serif;
 	color:#353535;
