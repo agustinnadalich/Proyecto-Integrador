@@ -1,9 +1,3 @@
-@font-face {
-  font-family:'Star Jedi';
-  src:url(fonts/starjedi_allfont_net.woff2) format('woff2');
-  font-weight:400 }
-
-
 * {
     font-family:'Montserrat',sans-serif;
     box-sizing:border-box; }
