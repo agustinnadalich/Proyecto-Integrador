@@ -151,7 +151,11 @@ footer {
 .container {
     width:95%;
     margin:auto;
-    margin-bottom:20px }
+  /* margin-bottom:20px */ }
+
+.container-general{
+  border: solid 2px red;
+}
 
 .donacion {
     margin-top:10vh }
@@ -160,7 +164,7 @@ footer {
     margin:0;
     justify-content:center }
 
-    .estad {
+.estad {
     margin:1%;
     display:inline-block;
     text-align:center;
