@@ -3,56 +3,53 @@
   src:url(fonts/starjedi_allfont_net.woff2) format('woff2');
   font-weight:400 }
 
-@media (max-width:600px) {
-  .titulo_recepcion {
-    bottom:15vh;margin:0 5% 0 5% } }
 
 * {
-    font-family:Montserrat,sans-serif
-    box-sizing:border-box }
+    font-family:'Montserrat',sans-serif;
+    box-sizing:border-box; }
 
 a {
     text-decoration:none;
     display:inline-block;
     color:inherit;
-    font-family:'Montserrat 400',sans-serif }
+    font-family:'Montserrat 400',sans-serif; }
 
 body {
-    font-family:'Montserrat 400',sans-serif
-    height:100%
-    height:100vh  }
+    font-family:'Montserrat 400',sans-serif;
+    height:100%;
+    height:100vh;  }
 
 button {
-    text-decoration:none }
+    text-decoration:none; }
 
 html {
-    font-family:'Montserrat 400',sans-serif
-    height:100%
-    height:100vh }
+    font-family:'Montserrat 400',sans-serif;
+    height:100%;
+    height:100vh ;}
 
 ol,ul {
     list-style:none;
     padding:0;
-    margin:0 }
+    margin:0; }
 
 img {
-    width:100% }
+    width:100%; }
 
 h1 {
-    font-family:'Montserrat 800',sans-serif
-    font-weight:800
-    text-align:center }
+    font-family:'Montserrat 800',sans-serif;
+    font-weight:800;
+    text-align:center; }
 
 h2 {
     font-family:'Montserrat 800',sans-serif;
     font-size:2em;
-    color:#f95543
-    font-weight:800  }
+    color:#f95543;
+    font-weight:800 ; }
 
 h3 {
     font-family:'Montserrat 800',sans-serif;
-    margin-top:50px
-    font-weight:800
+    margin-top:50px;
+    font-weight:800;
     color:#f95543 }
 
 p {
@@ -65,9 +62,9 @@ footer {
     width:100%;
     background-color:#ebccb6;
     color:#e85151;
-    border-radius:60% 60% 0 0
+    border-radius:60% 60% 0 0;
     position:absolute;
-    bottom:0 }
+    bottom:0; }
 
 
 .a_btn {
@@ -80,13 +77,13 @@ footer {
 
 .bordes {
     border-left:2px solid #e85151;
-    border-right:2px solid #e85151 }
+    border-right:2px solid #e85151; }
 
 .btn {
-    color:#e85151 }
+    color:#e85151; }
 
 .btn_busqueda {
-    border-color:#f95543 }
+    border-color:#f95543; }
 
 .btn_busqueda:hover {
     color:#fff;
@@ -144,23 +141,12 @@ footer {
 .carac:hover {
     box-shadow:0 15px 70px rgba(0,0,0,2.5) }
 
-
-.container {
-    width:95%;
-    margin:auto }
-
 .contact {
-    margin-left:20px;
-    margin-top:20px;
-    width:70% }
-
-.contact {
-    width:90%;
+    width:70%;
     min-height:50vh;
     margin:auto;
     margin-top:10vh;
     text-align:center }
-
 
 .contacto a {
     color:#e85151;
@@ -180,15 +166,18 @@ footer {
     margin:0;
     justify-content:center }
 
-.estad {
+    .estad {
     margin:1%;
     display:inline-block;
     text-align:center;
     box-shadow:0 5px 20px rgba(0,0,0,.25);
-    transition:transform .3s,box-shadow .3s }
+    transition:transform .3s,box-shadow .3s; }
+
+    .titulo_estadistica {
+        font-size:3.5em; }
 
 .elemento-lista-de-filtros:hover {
-    background:#000 }
+    background:#000; }
 
 .fa {
     font-size:50px;
@@ -211,6 +200,9 @@ footer {
 .formsignup {
     text-align:center;
     margin-top:20px }
+
+.textoform {
+    min-width:130px }
 
 .hr-1 {
     border:none;
@@ -283,36 +275,24 @@ footer {
     color:#fff;
     font-weight:700;
     position:relative;
-    display:inline-flex }
-
-.recepcion {
-    background-image:url(../manos-juntas.jpg);
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    display:table-cell;
+    display:inline-flex;
     text-align:center;
-    vertical-align:middle;
-    height:400px;
-    color:#fff;
-    font-weight:700 }
+    vertical-align:middle; }
+
+    .titulo_recepcion {
+        position:absolute;
+        font-size:2.5em;
+        margin:10% 57% 0 5%;
+        text-shadow:2px 2px 4px #fff }
+
+    @media (max-width:600px) {
+      .titulo_recepcion {
+        bottom:15vh;
+        margin:0 5% 0 5% }; }
 
 .social a {
     color:#e85151;
     margin-top:30px;
     padding:5px;
     display:inline-flex;
-    justify-content:center }
-
-
-.titulo_recepcion {
-    position:absolute;
-    font-size:2.5em;
-    margin:10% 57% 0 5%;
-    text-shadow:2px 2px 4px #fff }
-
-.titulo_estadistica {
-    font-size:3.5em }
-
-.textoform {
-    min-width:130px }
+    justify-content:center; }
