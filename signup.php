@@ -5,20 +5,22 @@
 		$inputEmail = trim($_POST["email"]);
 		$inputPass = trim($_POST["password"]);
 
+    $errores = [];
+
 		if ( $inputUser === "" ) {
-			$errorUser = "Error. El nombre es obligatorio <br>";
+			$errores ["nombre"] = "Error. El nombre es obligatorio <br>";
 		}
 
 		if ( $inputEmail === "" ) {
-			$errorEmail = "Error. El email es obligatorio <br>";
+			$errores ["mail"] = "Error. El email es obligatorio <br>";
 		} elseif ( !filter_var($inputEmail, FILTER_VALIDATE_EMAIL) ) {
-			$errorEmail = "Error. El email debe tener un formato válido <br>";
+			$errores ["mail"] = "Error. El email debe tener un formato válido <br>";
 		}
 
 		if ( $inputPass === "" ) {
-			$errorPass = "Error. El password es obligatorio <br>";
+			$errores ["pass"] = "Error. El password es obligatorio <br>";
 		} elseif ( strlen($inputPass) < 8 ) {
-			$errorPass = "Error. El password debe tener más de 8 letras <br>";
+			$errores ["pass"] = "Error. El password debe tener más de 8 letras <br>";
 		}
 
     // agregar mas elseifs con validaciones aca
@@ -50,29 +52,29 @@ require_once 'partials/head.php';
       <p>
         <label class="textoform"for="nombre">Nombre:</label>
         <input id="nombre" type="text" name="" value="">
-        <?php if ( isset($errorUser) ): ?>
-					<h3 style = "color: red", "font-weight: bold"><?= $errorUser; ?></h3>
+        <?php if ( isset($errores["nombre"]) ): ?>
+					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
 				<?php endif; ?>
       </p>
       <p>
         <label class="textoform" for="apellido">Apellido:</label>
         <input id="apellido" type="text" name="" value="">
-        <?php if ( isset($errorUser) ): ?>
-					<h3 style = "color: red", "font-weight: bold"><?= $errorUser; ?></h3>
+        <?php if ( isset($errores["nombre"]) ): ?>
+					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
 				<?php endif; ?>
       </p>
         <p>
           <label class="textoform" for="email">Email:</label>
           <input id="email"type="email" name="email" value=""placeholder="user@email.com">
-          <?php if ( isset($errorUser) ): ?>
-  					<h3 style = "color: red", "font-weight: bold"><?= $errorEmail; ?></h3>
+          <?php if ( isset($errores["mail"]) ): ?>
+  					<h3 style = "color: red", "font-weight: bold"><?= $errores["mail"]; ?></h3>
   				<?php endif; ?>
         </p>
         <p>
           <label class="textoform" for="pass">Contraseña</label>
           <input id="pass"type="password" name="pass" value="">
-          <?php if ( isset($errorUser) ): ?>
-  					<h3 style = "color: red", "font-weight: bold"><?= $errorPass; ?></h3>
+          <?php if ( isset($errores["pass"]) ): ?>
+  					<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
   				<?php endif; ?>
         </p>
 
@@ -87,7 +89,7 @@ require_once 'partials/head.php';
         </p>
 
 
-        <a class="a_btn"href="welcome.php">Registrarse</a>
+        <a class="a_btn"href="profile.php">Registrarse</a>
 
     </form>
 
