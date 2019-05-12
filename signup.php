@@ -1,4 +1,67 @@
+<!-- generar id  -->
 <?php
+function generateID() {
+		// Traigo a todos los usuarios
+		$allUsers = getAllUsers();
+
+		// Si el conteo del array de usuarios es igual a cero
+		if ( count($allUsers) == 0 ) {
+			return 1;
+		}
+
+		// Si el conteo del array de usuarios es superior a cero, obtengo el último usuario registrado
+		$lastUser = array_pop($allUsers);
+
+		// Retorno el ID del último usuario registrado + 1
+		return $lastUser['id'] + 1;
+	}
+?>
+
+<!-- generar id -->
+
+<!-- validaciones img -->
+
+<?php
+
+function saveImage(){
+// si está seteado en $_FILES la posición "avatar"
+if (isset($_FILES["avatar"])) {
+	// Si el error de subida es igual a 0
+	if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
+		// Obtengo el nombre de la imagen
+		$nombreDeLaImagen = $_FILES["avatar"]["name"];
+		// Del nombre de la imagen obtengo la extensión
+		$ext = pathinfo($nombreDeLaImagen, PATHINFO_EXTENSION);
+
+		// Si la extesión de la imagen NO es JPG, NO es png ni tampoco gif
+		if ($ext != "jpg" && $ext != "png" && $ext != "gif") {
+			echo "Formato invalido";
+		} else {
+			// Si se cumple con el formato valido obtenemos el archivo temporal
+			$archivoTemporal = $_FILES["avatar"]["tmp_name"];
+
+			// Nos creamos un nombre de imagen único usando la extensión que capturamos
+			$nombreImagenFinal = uniqid("img_") . "." . $ext;
+
+			// Definimos el destino en donde se guardará la imagen
+			// dirname(__FILE__) nos deja ubicados en la posición de este archivo
+			$destino = dirname(__FILE__) . "/avatars/" . $nombreImagenFinal;
+
+			// Subimos finalmente la imagen a donde deseamos
+			move_uploaded_file($archivoTemporal, $destino);
+
+			echo "Imagen se subió";
+		}
+	}
+}
+}
+?>
+
+<!-- validaciones img -->
+
+<!-- validaciones user, mail, pass -->
+<?php
+	function registerValidate(){
 	if ($_POST) {
 
 		$inputUser = trim($_POST["user"]);
@@ -31,7 +94,9 @@
 		// }
 
 	}
+}
 ?>
+<!-- validaciones user, mail, pass -->
 
 <!-- Head -->
 
@@ -51,28 +116,28 @@ require_once 'partials/head.php';
     <form class="formregistro" action="profile.php" method="post">
       <p>
         <label class="textoform"for="nombre">Nombre:</label>
-        <input id="nombre" type="text" name="" value="">
+        <input id="nombre" type="text" name="" value="<?= $name; ?>">
         <?php if ( isset($errores["nombre"]) ): ?>
 					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
 				<?php endif; ?>
       </p>
       <p>
         <label class="textoform" for="apellido">Apellido:</label>
-        <input id="apellido" type="text" name="" value="">
+        <input id="apellido" type="text" name="" value="<?= $apellido; ?>">
         <?php if ( isset($errores["nombre"]) ): ?>
 					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
 				<?php endif; ?>
       </p>
         <p>
           <label class="textoform" for="email">Email:</label>
-          <input id="email"type="email" name="email" value=""placeholder="user@email.com">
+          <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
           <?php if ( isset($errores["mail"]) ): ?>
   					<h3 style = "color: red", "font-weight: bold"><?= $errores["mail"]; ?></h3>
   				<?php endif; ?>
         </p>
         <p>
           <label class="textoform" for="pass">Contraseña</label>
-          <input id="pass"type="password" name="pass" value="">
+          <input id="pass"type="password" name="pass" value="<?= $pass; ?>">
           <?php if ( isset($errores["pass"]) ): ?>
   					<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
   				<?php endif; ?>
@@ -80,14 +145,10 @@ require_once 'partials/head.php';
 
         <!-- poner imagen -->
 
-        <p>
-          <label class="textoform" for="pass">Contraseña</label>
-          <input id="pass"type="password" name="pass" value="">
-          <?php if ( isset($errorUser) ): ?>
-  					<h3 style = "color: red", "font-weight: bold"><?= $errorPass; ?></h3>
-  				<?php endif; ?>
-        </p>
+				<input type="file" name="avatar">
+				<button type="button" class="btn btn-dark">Subir</button>
 
+				<!-- poner imagen -->
 
         <a class="a_btn"href="profile.php">Registrarse</a>
 
