@@ -89,8 +89,8 @@ require_once 'partials/head.php';
 
         <?php foreach ($productos as $producto): ?>
 					<div class="col-6 col-md-4 col-sm-6 col-lg-4 carac">
-            <img src=<?php echo $producto["imagen"] ?> width="100%">
-						<h2 class="text-danger"> <?php echo $producto["nombre"] ?> </h2>
+            <img src=<?php echo $producto["imagen"] ?> width="100%" alt="Etiqueta producto 1" class="imagenes-catalogo">
+						<h2> <?php echo $producto["nombre"] ?> </h2>
 						<p> <?php echo $producto["detalle"] ?> </p>
 					</div>
 				<?php endforeach; ?>
