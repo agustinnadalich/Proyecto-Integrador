@@ -46,9 +46,9 @@ function generateID() {
 
 <!-- validaciones img -->
 <?php
-function saveImage(){
 		// si está seteado en $_FILES la posición "avatar"
 		if (isset($_FILES["avatar"])) {
+			function saveImage(){
 			// Si el error de subida es igual a 0
 			if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
 				// Obtengo el nombre de la imagen
@@ -74,9 +74,9 @@ function saveImage(){
 
 					echo "Imagen se subió";
 				}
+				}
 			}
 		}
-}
 ?>
 <!-- validaciones img -->
 
@@ -184,52 +184,69 @@ require_once 'partials/head.php';
 					</div>
 
 					<div class="col-6">
+						<div class="form-group">
 						<label for="username">Nombre de usuario:</label>
 						<input type="text" name="username" value="<?= $username; ?>" class="form-control">
 						<?php if ( isset($errores["username"]) ): ?>
 							<h3 style = "color: red", "font-weight: bold"><?= $errores["username"]; ?></h3>
 						<?php endif; ?>
+						</div>
 					</div>
+
+					<div class="col-6">
+						<div class="form-group">
+		      	<label class="textoform" for="email">Email:</label>
+		        <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
+		        <?php if ( isset($errores["mail"]) ): ?>
+		  			<h3 style = "color: red", "font-weight: bold"><?= $errores["email"]; ?></h3>
+		  			<?php endif; ?>
+						</div>
+		      </div>
+
+					<div class="col-6">
+						<div class="form-group">
+		        <label class="textoform" for="pass">Contraseña</label>
+		        <input id="pass"type="password" name="pass" value="<?= $pass; ?>">
+		        <?php if ( isset($errores["pass"]) ): ?>
+		  			<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
+		  			<?php endif; ?>
+						</div>
+		      </div>
+
+					<div class="col-6">
+						<div class="form-group">
+		        <label class="textoform" for="rePass">Repetir contraseña</label>
+		        <input id="rePass"type="password" name="rePass" value="<?= $rePass; ?>">
+		        <?php if ( isset($errores["rePass"]) ): ?>
+		  			<h3 style = "color: red", "font-weight: bold"><?= $errores["rePass"]; ?></h3>
+		  			<?php endif; ?>
+						</div>
+		      </div>
+
+					<!-- pais de nacimiento  -->
+					<div class="col-6">
+						<div class="form-group">
+							<label class="textoform" for="paises">Pais de origen</label>
+							<select class="" name="">
+								<option value=""></option>
+								<option value=""></option>
+							</select>
+						</div>
+					</div>
+					<!-- pais de nacimiento -->
+
+					<!-- poner imagen -->
+					<div class="col-6">
+						<div class="form-group">
+							<button type="submit" class="a_btn">Registrarse</button>
+						</div>
+					</div>
+					<!-- poner imagen -->
+
+
 				</div>
 			</div>
 
-      <div>
-
-      </div>
-      <div>
-
-      </div>
-			<!-- pais de nacimiento  -->
-      <div>
-      	<label class="textoform" for="email">Email:</label>
-        <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
-        <?php if ( isset($errores["mail"]) ): ?>
-  			<h3 style = "color: red", "font-weight: bold"><?= $errores["email"]; ?></h3>
-  			<?php endif; ?>
-      </div>
-      <div>
-        <label class="textoform" for="pass">Contraseña</label>
-        <input id="pass"type="password" name="pass" value="<?= $pass; ?>">
-        <?php if ( isset($errores["pass"]) ): ?>
-  			<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
-  			<?php endif; ?>
-      </div>
-			<div>
-        <label class="textoform" for="rePass">Repetir contraseña</label>
-        <input id="rePass"type="password" name="rePass" value="<?= $rePass; ?>">
-        <?php if ( isset($errores["rePass"]) ): ?>
-  			<h3 style = "color: red", "font-weight: bold"><?= $errores["rePass"]; ?></h3>
-  			<?php endif; ?>
-      </div>
-
-        <!-- poner imagen -->
-
-				<input type="file" name="avatar"> <br><br>
-
-				<!-- poner imagen -->
-
-
-				<button type="submit" class="a_btn">Registrarse</button>
 
     </form>
 
