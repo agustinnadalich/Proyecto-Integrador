@@ -61,28 +61,39 @@ if (isset($_FILES["avatar"])) {
 
 <!-- validaciones user, mail, pass -->
 <?php
+
+	$nombre = "";
+	$apellido = "";
+	$email = "";
+	$pass = "";
+
 	function registerValidate(){
 	if ($_POST) {
 
-		$inputUser = trim($_POST["user"]);
-		$inputEmail = trim($_POST["email"]);
-		$inputPass = trim($_POST["password"]);
+		$nombre = trim($_POST["nombre"]);
+		$apellido = trim($_POST["apellido"]);
+		$email = trim($_POST["email"]);
+		$pass = trim($_POST["pass"]);
 
     $errores = [];
 
-		if ( $inputUser === "" ) {
+		if ( $nombre === "" ) {
 			$errores ["nombre"] = "Error. El nombre es obligatorio <br>";
 		}
 
-		if ( $inputEmail === "" ) {
-			$errores ["mail"] = "Error. El email es obligatorio <br>";
-		} elseif ( !filter_var($inputEmail, FILTER_VALIDATE_EMAIL) ) {
-			$errores ["mail"] = "Error. El email debe tener un formato válido <br>";
+		if ( $apellido === "" ) {
+			$errores ["apellido"] = "Error. El apellido es obligatorio <br>";
 		}
 
-		if ( $inputPass === "" ) {
+		if ( $email === "" ) {
+			$errores ["email"] = "Error. El email es obligatorio <br>";
+		} elseif ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+			$errores ["email"] = "Error. El email debe tener un formato válido <br>";
+		}
+
+		if ( $pass === "" ) {
 			$errores ["pass"] = "Error. El password es obligatorio <br>";
-		} elseif ( strlen($inputPass) < 8 ) {
+		} elseif ( strlen($pass) < 8 ) {
 			$errores ["pass"] = "Error. El password debe tener más de 8 letras <br>";
 		}
 
@@ -116,7 +127,7 @@ require_once 'partials/head.php';
     <form class="formregistro" action="profile.php" method="post">
       <p>
         <label class="textoform"for="nombre">Nombre:</label>
-        <input id="nombre" type="text" name="" value="<?= $name; ?>">
+        <input id="nombre" type="text" name="" value="<?php echo $nombre; ?>">
         <?php if ( isset($errores["nombre"]) ): ?>
 					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
 				<?php endif; ?>
@@ -124,15 +135,15 @@ require_once 'partials/head.php';
       <p>
         <label class="textoform" for="apellido">Apellido:</label>
         <input id="apellido" type="text" name="" value="<?= $apellido; ?>">
-        <?php if ( isset($errores["nombre"]) ): ?>
-					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
+        <?php if ( isset($errores["apellido"]) ): ?>
+					<h3 style = "color: red", "font-weight: bold"><?= $errores["apellido"]; ?></h3>
 				<?php endif; ?>
       </p>
         <p>
           <label class="textoform" for="email">Email:</label>
           <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
           <?php if ( isset($errores["mail"]) ): ?>
-  					<h3 style = "color: red", "font-weight: bold"><?= $errores["mail"]; ?></h3>
+  					<h3 style = "color: red", "font-weight: bold"><?= $errores["email"]; ?></h3>
   				<?php endif; ?>
         </p>
         <p>
@@ -145,8 +156,7 @@ require_once 'partials/head.php';
 
         <!-- poner imagen -->
 
-				<input type="file" name="avatar">
-				<button type="button" class="btn btn-dark">Subir</button>
+				<input type="file" name="avatar"> <br><br>
 
 				<!-- poner imagen -->
 

@@ -1,3 +1,33 @@
+<!-- array productos -->
+
+<?php
+
+$productos = [
+  [
+    "nombre" => "Nombre Producto 1",
+    "detalle" => "Detalle Producto 1",
+    "imagen" => "https://loremflickr.com/320/240"
+  ],
+  [
+    "nombre" => "Nombre Producto 2",
+    "detalle" => "Detalle Producto 2",
+    "imagen" => "https://loremflickr.com/320/240"
+  ],
+  [
+    "nombre" => "Nombre Producto 3",
+    "detalle" => "Detalle Producto 3",
+    "imagen" => "https://loremflickr.com/320/240"
+  ],
+  [
+    "nombre" => "Nombre Producto 4",
+    "detalle" => "Detalle Producto 4",
+    "imagen" => "https://loremflickr.com/320/240"
+  ],
+]
+ ?>
+
+<!-- array productos  -->
+
 <!-- Head -->
 
 <?php
@@ -55,6 +85,17 @@ require_once 'partials/head.php';
         <p>Este es el container productos</p>
         <!-- 3 columnas  -->
         <div class="row">
+        <!-- prueba php embebido -->
+
+        <?php foreach ($productos as $producto): ?>
+					<div class="col-6 col-md-4 col-sm-6 col-lg-4 carac">
+            <img src=<?php echo $producto["imagen"] ?> width="100%">
+						<h2 class="text-danger"> <?php echo $producto["nombre"] ?> </h2>
+						<p> <?php echo $producto["detalle"] ?> </p>
+					</div>
+				<?php endforeach; ?>
+
+        <!-- prueba php embebido -->
         <!-- 1 columna -->
         <div class="col-6 col-md-4 carac">
           <article class="article">
