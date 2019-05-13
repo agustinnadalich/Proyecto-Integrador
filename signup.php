@@ -47,35 +47,35 @@ function generateID() {
 <!-- validaciones img -->
 <?php
 function saveImage(){
-// si está seteado en $_FILES la posición "avatar"
-if (isset($_FILES["avatar"])) {
-	// Si el error de subida es igual a 0
-	if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
-		// Obtengo el nombre de la imagen
-		$nombreDeLaImagen = $_FILES["avatar"]["name"];
-		// Del nombre de la imagen obtengo la extensión
-		$ext = pathinfo($nombreDeLaImagen, PATHINFO_EXTENSION);
-		// Si la extesión de la imagen NO es JPG, NO es png ni tampoco gif
-		if ($ext != "jpg" && $ext != "png" && $ext != "gif") {
-			echo "Formato invalido";
-		} else {
-			// Si se cumple con el formato valido obtenemos el archivo temporal
-			$archivoTemporal = $_FILES["avatar"]["tmp_name"];
+		// si está seteado en $_FILES la posición "avatar"
+		if (isset($_FILES["avatar"])) {
+			// Si el error de subida es igual a 0
+			if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
+				// Obtengo el nombre de la imagen
+				$nombreDeLaImagen = $_FILES["avatar"]["name"];
+				// Del nombre de la imagen obtengo la extensión
+				$ext = pathinfo($nombreDeLaImagen, PATHINFO_EXTENSION);
+				// Si la extesión de la imagen NO es JPG, NO es png ni tampoco gif
+				if ($ext != "jpg" && $ext != "png" && $ext != "gif") {
+					echo "Formato invalido";
+				} else {
+					// Si se cumple con el formato valido obtenemos el archivo temporal
+					$archivoTemporal = $_FILES["avatar"]["tmp_name"];
 
-			// Nos creamos un nombre de imagen único usando la extensión que capturamos
-			$nombreImagenFinal = uniqid("img_") . "." . $ext;
+					// Nos creamos un nombre de imagen único usando la extensión que capturamos
+					$nombreImagenFinal = uniqid("img_") . "." . $ext;
 
-			// Definimos el destino en donde se guardará la imagen
-			// dirname(__FILE__) nos deja ubicados en la posición de este archivo
-			$destino = dirname(__FILE__) . "/avatars/" . $nombreImagenFinal;
+					// Definimos el destino en donde se guardará la imagen
+					// dirname(__FILE__) nos deja ubicados en la posición de este archivo
+					$destino = dirname(__FILE__) . "/avatars/" . $nombreImagenFinal;
 
-			// Subimos finalmente la imagen a donde deseamos
-			move_uploaded_file($archivoTemporal, $destino);
+					// Subimos finalmente la imagen a donde deseamos
+					move_uploaded_file($archivoTemporal, $destino);
 
-			echo "Imagen se subió";
+					echo "Imagen se subió";
+				}
+			}
 		}
-	}
-}
 }
 ?>
 <!-- validaciones img -->
@@ -91,21 +91,19 @@ if (isset($_FILES["avatar"])) {
 	$rePass = "";
 
 	function registerValidate(){
-	if ($_POST) {
-
 		$nombre = trim($_POST["nombre"]);
 		$username = trim($_POST["username"]);
 		$email = trim($_POST["email"]);
 		$pass = trim($_POST["pass"]);
 		$rePass = trim($_POST["rePass"]);
 
-    $errores = [];
+		$errores = [];
 
 		if ( $nombre === "" ) {
 			$errores ["nombre"] = "Error. El nombre es obligatorio <br>";
 		}
 
-		if ( $apellido === "" ) {
+		if ( $username === "" ) {
 			$errores ["username"] = "Error. El usuario es obligatorio <br>";
 		}
 
@@ -125,7 +123,7 @@ if (isset($_FILES["avatar"])) {
 
 		function contieneDH($stringPassword){
 			if (strpos($stringPassword, 'DH')) {
-    	return true;}
+			return true;}
 		}
 
 		if ( $rePass === "" ) {
@@ -134,26 +132,28 @@ if (isset($_FILES["avatar"])) {
 			$errores ["rePass"] = "Error. Las contraseñas deben coincidir <br>";
 		}
 
+		return $errores;
+
 	}
+
+	if ($_POST) {
+
+		$errores = registerValidate();
+
+		// si todo esta ok
+		if (count($errores) == 0) {
+			// Hasheamos la contraseña antes de guardar
+			$_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+			// Redirección al salir todo ok
+			header("location: profile.php");
+			exit;
+		}
+		// si todo esta ok
+
 }
 ?>
 <!-- validaciones user, mail, pass -->
 
-
-<!-- le tengo que agregar si esta seteado post y files ??? -->
-<!-- si todo esta ok -->
-<!-- <?php
-// if (count($errores) == 0) {
-
-	// Hasheamos la contraseña antes de guardar
-	// $_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-
-	// Redirección al salir todo ok
-	// header("location: profile.php");
-	// exit;
-// }
-?> -->
-<!-- si todo esta ok -->
 
 
 <!-- Head -->
@@ -170,43 +170,57 @@ require_once 'partials/head.php';
     <div class="formsignup">
 
 
-    <form class="formregistro" action="profile.php" method="post">
-      <p>
-        <label class="textoform"for="nombre">Nombre completo:</label>
-        <input id="nombre" type="text" name="" value="<?php echo $nombre; ?>">
-        <?php if ( isset($errores["nombre"]) ): ?>
-					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
-				<?php endif; ?>
-      </p>
-      <p>
-        <label class="textoform" for="username">Nombre de usuario:</label>
-        <input id="username" type="text" name="" value="<?= $username; ?>">
-        <?php if ( isset($errores["username"]) ): ?>
-					<h3 style = "color: red", "font-weight: bold"><?= $errores["username"]; ?></h3>
-				<?php endif; ?>
-      </p>
+    <form class="formregistro" method="post">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<div class="form-group">
+							<label for="nombre">Nombre completo:</label>
+			        <input type="text" name="nombre" value="<?php echo $nombre; ?>" class="form-control">
+			        <?php if ( isset($errores["nombre"]) ): ?>
+								<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
+							<?php endif; ?>
+						</div>
+					</div>
+
+					<div class="col-6">
+						<label for="username">Nombre de usuario:</label>
+						<input type="text" name="username" value="<?= $username; ?>" class="form-control">
+						<?php if ( isset($errores["username"]) ): ?>
+							<h3 style = "color: red", "font-weight: bold"><?= $errores["username"]; ?></h3>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+
+      <div>
+
+      </div>
+      <div>
+
+      </div>
 			<!-- pais de nacimiento  -->
-      <p>
+      <div>
       	<label class="textoform" for="email">Email:</label>
         <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
         <?php if ( isset($errores["mail"]) ): ?>
   			<h3 style = "color: red", "font-weight: bold"><?= $errores["email"]; ?></h3>
   			<?php endif; ?>
-      </p>
-      <p>
+      </div>
+      <div>
         <label class="textoform" for="pass">Contraseña</label>
         <input id="pass"type="password" name="pass" value="<?= $pass; ?>">
         <?php if ( isset($errores["pass"]) ): ?>
   			<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
   			<?php endif; ?>
-      </p>
-			<p>
+      </div>
+			<div>
         <label class="textoform" for="rePass">Repetir contraseña</label>
         <input id="rePass"type="password" name="rePass" value="<?= $rePass; ?>">
         <?php if ( isset($errores["rePass"]) ): ?>
   			<h3 style = "color: red", "font-weight: bold"><?= $errores["rePass"]; ?></h3>
   			<?php endif; ?>
-      </p>
+      </div>
 
         <!-- poner imagen -->
 
@@ -214,7 +228,8 @@ require_once 'partials/head.php';
 
 				<!-- poner imagen -->
 
-        <a class="a_btn"href="profile.php">Registrarse</a>
+
+				<button type="submit" class="a_btn">Registrarse</button>
 
     </form>
 
