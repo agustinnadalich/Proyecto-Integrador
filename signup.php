@@ -16,13 +16,11 @@ function generateID() {
 		return $lastUser['id'] + 1;
 	}
 ?>
-
 <!-- generar id -->
 
+
 <!-- validaciones img -->
-
 <?php
-
 function saveImage(){
 // si está seteado en $_FILES la posición "avatar"
 if (isset($_FILES["avatar"])) {
@@ -32,7 +30,6 @@ if (isset($_FILES["avatar"])) {
 		$nombreDeLaImagen = $_FILES["avatar"]["name"];
 		// Del nombre de la imagen obtengo la extensión
 		$ext = pathinfo($nombreDeLaImagen, PATHINFO_EXTENSION);
-
 		// Si la extesión de la imagen NO es JPG, NO es png ni tampoco gif
 		if ($ext != "jpg" && $ext != "png" && $ext != "gif") {
 			echo "Formato invalido";
@@ -56,8 +53,8 @@ if (isset($_FILES["avatar"])) {
 }
 }
 ?>
-
 <!-- validaciones img -->
+
 
 <!-- validaciones user, mail, pass -->
 <?php
@@ -93,24 +90,40 @@ if (isset($_FILES["avatar"])) {
 
 		if ( $pass === "" ) {
 			$errores ["pass"] = "Error. El password es obligatorio <br>";
-		} elseif ( strlen($pass) < 8 ) {
-			$errores ["pass"] = "Error. El password debe tener más de 8 letras <br>";
+		} elseif ( strlen($pass) < 5 ) {
+			$errores ["pass"] = "Error. El password debe tener más de 5 letras <br>";
+		} elseif ( !contieneDH($pass) ) {
+			$errores ["pass"] = "Error. El password debe tener las letras DH en él <br>";
 		}
 
-    // agregar mas elseifs con validaciones aca
-
-		// if ($inputUser != "" && $inputEmail != "" && $inputPass != "") {
-		// 	header("location: welcome.php");
-		// 	exit;
-		// }
+		function contieneDH($stringPassword){
+			if (strpos($stringPassword, 'DH')) {
+    	return true;}
+		}
 
 	}
 }
 ?>
 <!-- validaciones user, mail, pass -->
 
-<!-- Head -->
 
+<!-- le tengo que agregar si esta seteado post y files ??? -->
+<!-- si todo esta ok -->
+<!-- <?php
+// if (count($errores) == 0) {
+
+	// Hasheamos la contraseña antes de guardar
+	// $_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+
+	// Redirección al salir todo ok
+	// header("location: profile.php");
+	// exit;
+// }
+?> -->
+<!-- si todo esta ok -->
+
+
+<!-- Head -->
 <?php
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
