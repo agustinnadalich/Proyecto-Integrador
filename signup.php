@@ -1,3 +1,28 @@
+<!-- paises -->
+<?php
+$paises = [
+		'ar' => 'Argentina',
+		'bo' => 'Bolivia',
+		'br' => 'Brasil',
+		'co' => 'Colombia',
+		'cl' => 'Chile',
+		'cr' => 'Costa Rica',
+		'cu' => 'Cuba',
+		'ec' => 'Ecuador',
+		'ho' => 'Honduras',
+		'gu' => 'Guatemala',
+		'mx' => 'Mexico',
+		'ni' => 'Nicaragua',
+		'pa' => 'Paraguay',
+		'pn' => 'Panama',
+		'pe' => 'Perú',
+		'uy' => 'Uruguay',
+		've' => 'Venezuela',
+]
+ ?>
+<!-- paises -->
+
+
 <!-- generar id  -->
 <?php
 function generateID() {
@@ -60,17 +85,19 @@ if (isset($_FILES["avatar"])) {
 <?php
 
 	$nombre = "";
-	$apellido = "";
+	$username = "";
 	$email = "";
 	$pass = "";
+	$rePass = "";
 
 	function registerValidate(){
 	if ($_POST) {
 
 		$nombre = trim($_POST["nombre"]);
-		$apellido = trim($_POST["apellido"]);
+		$username = trim($_POST["username"]);
 		$email = trim($_POST["email"]);
 		$pass = trim($_POST["pass"]);
+		$rePass = trim($_POST["rePass"]);
 
     $errores = [];
 
@@ -79,7 +106,7 @@ if (isset($_FILES["avatar"])) {
 		}
 
 		if ( $apellido === "" ) {
-			$errores ["apellido"] = "Error. El apellido es obligatorio <br>";
+			$errores ["username"] = "Error. El usuario es obligatorio <br>";
 		}
 
 		if ( $email === "" ) {
@@ -99,6 +126,12 @@ if (isset($_FILES["avatar"])) {
 		function contieneDH($stringPassword){
 			if (strpos($stringPassword, 'DH')) {
     	return true;}
+		}
+
+		if ( $rePass === "" ) {
+			$errores ["rePass"] = "Error. El password es obligatorio <br>";
+		} elseif ( $rePass != $pass ) {
+			$errores ["rePass"] = "Error. Las contraseñas deben coincidir <br>";
 		}
 
 	}
@@ -139,33 +172,41 @@ require_once 'partials/head.php';
 
     <form class="formregistro" action="profile.php" method="post">
       <p>
-        <label class="textoform"for="nombre">Nombre:</label>
+        <label class="textoform"for="nombre">Nombre completo:</label>
         <input id="nombre" type="text" name="" value="<?php echo $nombre; ?>">
         <?php if ( isset($errores["nombre"]) ): ?>
 					<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
 				<?php endif; ?>
       </p>
       <p>
-        <label class="textoform" for="apellido">Apellido:</label>
-        <input id="apellido" type="text" name="" value="<?= $apellido; ?>">
-        <?php if ( isset($errores["apellido"]) ): ?>
-					<h3 style = "color: red", "font-weight: bold"><?= $errores["apellido"]; ?></h3>
+        <label class="textoform" for="username">Nombre de usuario:</label>
+        <input id="username" type="text" name="" value="<?= $username; ?>">
+        <?php if ( isset($errores["username"]) ): ?>
+					<h3 style = "color: red", "font-weight: bold"><?= $errores["username"]; ?></h3>
 				<?php endif; ?>
       </p>
-        <p>
-          <label class="textoform" for="email">Email:</label>
-          <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
-          <?php if ( isset($errores["mail"]) ): ?>
-  					<h3 style = "color: red", "font-weight: bold"><?= $errores["email"]; ?></h3>
-  				<?php endif; ?>
-        </p>
-        <p>
-          <label class="textoform" for="pass">Contraseña</label>
-          <input id="pass"type="password" name="pass" value="<?= $pass; ?>">
-          <?php if ( isset($errores["pass"]) ): ?>
-  					<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
-  				<?php endif; ?>
-        </p>
+			<!-- pais de nacimiento  -->
+      <p>
+      	<label class="textoform" for="email">Email:</label>
+        <input id="email"type="email" name="email" value="<?= $email; ?>" placeholder="user@email.com">
+        <?php if ( isset($errores["mail"]) ): ?>
+  			<h3 style = "color: red", "font-weight: bold"><?= $errores["email"]; ?></h3>
+  			<?php endif; ?>
+      </p>
+      <p>
+        <label class="textoform" for="pass">Contraseña</label>
+        <input id="pass"type="password" name="pass" value="<?= $pass; ?>">
+        <?php if ( isset($errores["pass"]) ): ?>
+  			<h3 style = "color: red", "font-weight: bold"><?= $errores["pass"]; ?></h3>
+  			<?php endif; ?>
+      </p>
+			<p>
+        <label class="textoform" for="rePass">Repetir contraseña</label>
+        <input id="rePass"type="password" name="rePass" value="<?= $rePass; ?>">
+        <?php if ( isset($errores["rePass"]) ): ?>
+  			<h3 style = "color: red", "font-weight: bold"><?= $errores["rePass"]; ?></h3>
+  			<?php endif; ?>
+      </p>
 
         <!-- poner imagen -->
 
