@@ -5,6 +5,8 @@
 
 $pagetitle= "LOGIN";
 require_once 'partials/head.php';
+include 'funcionesMatias.php';
+include 'controller-json.php';
 ?>
   <!-- nav bar -->
 
@@ -19,13 +21,13 @@ require_once 'partials/head.php';
              <div class="col-12">
                <div class="form-group">
                   <label class="textoform" for="email">Email | Usuario:</label>
-                    <input id="email"type="email" name="email" value="">
+                    <input type="email" name="email" value="">
                 </div>
               </div>
             <div class="col-12">
               <div class="form-group">
           <label class="textoform" for="pass">Contraseña</label>
-          <input id="pass"type="password" name="pass" value="">
+          <input type="password" name="pass" value="">
         </div>
       </div>
 

@@ -10,6 +10,7 @@ function registerValidate(){
   $email = trim($_POST["email"]);
   $pass = trim($_POST["pass"]);
   $rePass = trim($_POST["rePass"]);
+  $stringPassword = '';
 
   $errores = [];
 
@@ -31,13 +32,14 @@ function registerValidate(){
     $errores ["pass"] = "Error. El password es obligatorio <br>";
   } elseif ( strlen($pass) < 5 ) {
     $errores ["pass"] = "Error. El password debe tener más de 5 letras <br>";
-  } elseif ( !contieneDH($pass) ) {
+  } elseif ( !(contieneDH($pass)) ) {
     $errores ["pass"] = "Error. El password debe tener las letras DH en él <br>";
   }
 
   function contieneDH($stringPassword){
     if (strpos($stringPassword, 'DH')) {
-    return true;}
+    return true;} else {
+      return false;}
   }
 
   if ( $rePass === "" ) {

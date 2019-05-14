@@ -27,9 +27,9 @@ $productos = [
     "detalle" => "Detalle Producto 4",
     "imagen" => "https://loremflickr.com/320/240"
   ],
-]
+];
 
-$filtros = ["Zona", "Tamaño", "Urgencia"]
+$filtros = ["Zona", "Tamaño", "Urgencia"];
 $cantFiltros = count($filtros);
  ?>
 
@@ -58,13 +58,13 @@ require_once 'partials/head.php';
         <label class="" for="filtros">Filtros</label>
         <select class="" name="filtros">
           <option value="0"></option>
-            <?php foreach ($indiceFiltro=0, $indiceFiltro< $cantFiltros, $indiceFiltro++): ?>
-              <option
-              value="<?= $filtros[$indiceFiltro] ?>" <?= $filtros[$indiceFiltro] == $filtroDePost ? 'selected' : null; ?>
-              >
-              <?= $filtros[$indiceFiltro] ?>
-              </option>
-            <?php endforeach; ?>
+          <?php foreach ($filtros as $filtro): ?>
+           <option
+           value="<?= $filtro ?>" <?= $filtro == $filtroDePost ? 'selected' : null; ?>
+           >
+           <?= $filtro ?>
+           </option>
+         <?php endforeach; ?>
       </div>
       <div class="col-2">
         <hr class="hr-1">

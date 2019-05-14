@@ -63,6 +63,7 @@ $paises = [
 
 		// si todo esta ok
 		if (count($errores) == 0) {
+
 			// Hasheamos la contraseña antes de guardar
       passHash();
 
