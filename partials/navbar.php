@@ -19,7 +19,7 @@
             <span class="caret"></span>
            </a>
           <div class="dropdown-menu" aria-labelledby="dropdown_target">
-            <a href="body.php" class="dropdown-item">Nosotros</a>
+            <a href="index.php" class="dropdown-item">Nosotros</a>
             <div class="dropdown-divider"></div>
             <a href="contacto.php" class="dropdown-item">Contacto</a>
             <a href="faq.php" class="dropdown-item">FAQ</a>
