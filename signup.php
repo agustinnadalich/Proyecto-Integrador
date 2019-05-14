@@ -63,7 +63,11 @@ $paises = [
 		// si todo esta ok
 		if (count($errores) == 0) {
 			// Hasheamos la contraseña antes de guardar
-			$_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+      passHash();
+
+      // Proceso todo con JSon
+      procesoJson();
+
 			// Redirección al salir todo ok
 			header("location: profile.php");
 			exit;
