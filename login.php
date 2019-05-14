@@ -10,21 +10,33 @@ require_once 'partials/head.php';
 
 <?php require_once 'partials/navbar.php' ?>
 
-     <div class="formlogin">
+     <div class="formsignup">
 
 
-    <form class="" action="navbarpi.php" method="post">
-        <p>
-          <label class="textoform" for="email">Email | Usuario:</label>
-          <input id="email"type="email" name="email" value="">
-        </p>
-        <p>
+       <form class="" action="navbarpi.php" method="post">
+         <div class="container">
+           <div class="row">
+             <div class="col-12">
+               <div class="form-group">
+                  <label class="textoform" for="email">Email | Usuario:</label>
+                    <input id="email"type="email" name="email" value="">
+                </div>
+              </div>
+            <div class="col-12">
+              <div class="form-group">
           <label class="textoform" for="pass">Contraseña</label>
           <input id="pass"type="password" name="pass" value="">
-        </p>
+        </div>
+      </div>
 
-        <a class="a_btn"href="navbartpi.php">Ingresar</a>
-    </form>
+        <div class="col-12">
+          <div class="form-group">
+            <button type="submit" class="a_btn">Ingresar</button>
+          </div>
+        </div>
+      </form>
+      </div>
+      </div>
 
 </div>
 

@@ -2,10 +2,10 @@
 
 function registerValidate(){
 
-  global $nombre;
+  global $name;
   global $username;
   global $email;
-  $nombre = trim($_POST["nombre"]);
+  $name = trim($_POST["name"]);
   $username = trim($_POST["username"]);
   $email = trim($_POST["email"]);
   $pass = trim($_POST["pass"]);
@@ -13,8 +13,8 @@ function registerValidate(){
 
   $errores = [];
 
-  if ( $nombre === "" ) {
-    $errores ["nombre"] = "Error. El nombre es obligatorio <br>";
+  if ( $name === "" ) {
+    $errores ["name"] = "Error. El nombre es obligatorio <br>";
   }
 
   if ( $username === "" ) {
@@ -83,23 +83,5 @@ function passHash(){
   $_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 }
 
-function procesoJson(){
-  // Levanto el contenido del archivo
-  $contenidoDelArchivo = file_get_contents("usuarios.json");
-
-  // Convertimos de JSON a Array
-  $listadoDeUsuarios = json_decode($contenidoDelArchivo, true);
-
-  // Pusheamos lo que vino del formulario al array de usuarios
-  array_push($listadoDeUsuarios, $_POST);
-
-  // Convertimos a array de los usuarios a formato JSON
-  $todoJunto = json_encode($listadoDeUsuarios);
-
-  // var_dump($todoJunto); exit;
-
-  // Insertamos el FORMATO JSON de usuarios en nuestra DB.
-  file_put_contents("usuarios.json", $todoJunto);
-}
 
 ?>

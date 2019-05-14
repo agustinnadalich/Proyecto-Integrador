@@ -2,6 +2,7 @@
 $pagetitle= "REGISTRO";
 require_once 'partials/head.php';
 include 'funcionesMatias.php';
+include 'controller-json.php';
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
  ?>
 
@@ -48,7 +49,7 @@ $paises = [
 <!-- validaciones user, mail, pass -->
 <?php
 
-	$nombre = "";
+	$name = "";
 	$username = "";
 	$email = "";
 	$pass = "";
@@ -65,8 +66,8 @@ $paises = [
 			// Hasheamos la contraseña antes de guardar
       passHash();
 
-      // Proceso todo con JSon
-      procesoJson();
+      // Salvo el usuario
+      saveUser();
 
 			// Redirección al salir todo ok
 			header("location: profile.php");
@@ -90,9 +91,9 @@ $paises = [
 					<div class="col-6">
 						<div class="form-group">
 							<label for="nombre">Nombre completo:</label>
-			        <input type="text" name="nombre" value="<?php echo $nombre; ?>" class="form-control">
-			        <?php if ( isset($errores["nombre"]) ): ?>
-								<p style = "color: red; font-weight: bold"><?= $errores["nombre"]; ?></p>
+			        <input type="text" name="name" value="<?php echo $name; ?>" class="form-control">
+			        <?php if ( isset($errores["name"]) ): ?>
+								<p style = "color: red; font-weight: bold"><?= $errores["name"]; ?></p>
 							<?php endif; ?>
 						</div>
 					</div>

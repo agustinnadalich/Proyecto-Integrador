@@ -14,8 +14,8 @@ function generateID() {
 
       $allUsers = getAllUsers();
 
-      if (count($allUsers)=0) {
-        return = 1;
+      if (count($allUsers) == 0) {
+        return 1;
       }
     $lastUser= array_pop($allUsers);
 
@@ -57,8 +57,6 @@ function mailexist(){
     }
     return $mailRepetedError;
   }
-
-
 
 
 function getUserbyEmail($email){
