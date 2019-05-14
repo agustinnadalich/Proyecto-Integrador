@@ -89,6 +89,7 @@ function generateID() {
 	$email = "";
 	$pass = "";
 	$rePass = "";
+	$paisDePost = '';
 
 	function registerValidate(){
 		$nombre = trim($_POST["nombre"]);
@@ -139,6 +140,9 @@ function generateID() {
 	if ($_POST) {
 
 		$errores = registerValidate();
+		$paisDePost = $_POST["pais"];
+
+		var_dump($_POST);
 
 		// si todo esta ok
 		if (count($errores) == 0) {
@@ -178,7 +182,7 @@ require_once 'partials/head.php';
 							<label for="nombre">Nombre completo:</label>
 			        <input type="text" name="nombre" value="<?php echo $nombre; ?>" class="form-control">
 			        <?php if ( isset($errores["nombre"]) ): ?>
-								<h3 style = "color: red", "font-weight: bold"><?= $errores["nombre"]; ?></h3>
+								<p style = "color: red; font-weight: bold"><?= $errores["nombre"]; ?></p>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -227,9 +231,16 @@ require_once 'partials/head.php';
 					<div class="col-6">
 						<div class="form-group">
 							<label class="textoform" for="paises">Pais de origen</label>
-							<select class="" name="">
-								<option value=""></option>
-								<option value=""></option>
+							<select class="" name="pais">
+							<option value="0"></option>
+								<?php foreach ($paises as $code => $pais): ?>
+									<option
+									value="<?= $pais ?>"
+									<?= $pais == $paisDePost ? 'selected' : null; ?>
+									>
+									<?= $pais ?>
+									</option>
+								<?php endforeach; ?>
 							</select>
 						</div>
 					</div>
