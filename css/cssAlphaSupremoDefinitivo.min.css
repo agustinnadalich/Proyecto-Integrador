@@ -32,8 +32,7 @@ img {
 
 h1 {
     font-family:'Montserrat 800',sans-serif;
-    font-weight:800;
-    text-align:center; }
+    font-weight:800;}
 
 h2 {
     font-family:'Montserrat 800',sans-serif;
@@ -128,7 +127,7 @@ footer {
 
 .carac {
     display:inline-block;
-    text-align:center;
+    text-align:;
     padding:15px;
     box-shadow:0 5px 20px rgba(0,0,0,.25);
     transition:transform .3s,box-shadow .3s }
@@ -141,7 +140,7 @@ footer {
     min-height:50vh;
     margin:auto;
     margin-top:10vh;
-    text-align:center }
+    text-align: }
 
 .contacto a {
     color:#e85151;
@@ -163,12 +162,12 @@ footer {
 
 .estadisticas {
     margin:0;
-    justify-content:center }
+    justify-content: }
 
 .estad {
     margin:1%;
     display:inline-block;
-    text-align:center;
+    text-align:;
     box-shadow:0 5px 20px rgba(0,0,0,.25);
     transition:transform .3s,box-shadow .3s; }
 
@@ -181,23 +180,20 @@ footer {
 .fa {
     font-size:50px;
     text-decoration:none;
-    text-align:center }
+    text-align: }
 
 .form_container {
     border-radius:5px }
 
 .formlogin {
     min-height:50vh;
-    text-align:center;
     margin-top:10vh }
 
 .formregistro {
-    text-align:center;
     min-height:50vh;
     margin-top:10vh }
 
 .formsignup {
-    text-align:center;
     margin-top:20px }
 
 .textoform {
@@ -234,7 +230,7 @@ footer {
 .mapa-google {
     width:100%;
     position:absolute;
-    align-self:center;
+    align-self:;
     position:relative }
 
 .mapa {
@@ -263,9 +259,9 @@ footer {
     margin-top:5px }
 
 .recepcion {
-    align-self:center;
+    align-self:;
     background-image:url(../img/manos_home.jpg);
-    background-position:center;
+    background-position:;
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
@@ -275,7 +271,7 @@ footer {
     font-weight:700;
     position:relative;
     display:inline-flex;
-    text-align:center;
+    text-align:;
     vertical-align:middle; }
 
     .titulo_recepcion {
@@ -294,4 +290,4 @@ footer {
     margin-top:30px;
     padding:5px;
     display:inline-flex;
-    justify-content:center; }
+    justify-content:; }
