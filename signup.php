@@ -1,9 +1,14 @@
 <?php
+
+
+
+
 $pagetitle= "REGISTRO";
 require_once 'partials/head.php';
 include 'funcionesMatias.php';
 include 'controller-json.php';
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
+
  ?>
 
  <!-- nav bar -->
@@ -147,7 +152,7 @@ $paises = [
 					<div class="col-6">
 						<div class="form-group">
 							<label class="textoform" for="paises">Pais de origen</label>
-							<select class="" name="pais">
+							<select class="location" name="pais">
 							<option value="0"></option>
 								<?php foreach ($paises as $code => $pais): ?>
 									<option

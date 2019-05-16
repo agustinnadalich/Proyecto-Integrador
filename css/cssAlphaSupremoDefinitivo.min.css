@@ -11,7 +11,14 @@ a {
         text-decoration:none!important;
         color:inherit!important;
         }
+body, html{
+  min-height: 100vh;
+  position: relative;
+}
 
+body {
+  padding-bottom: 130px
+}
 
 button {
     text-decoration:none; }
@@ -53,7 +60,7 @@ footer {
     background-color:#ebccb6;
     color:#e85151;
     border-radius:60% 60% 0 0;
-    position:relative;
+    position:absolute;
     bottom:0; }
 
 
@@ -123,7 +130,7 @@ footer {
 
 .carac {
     display:inline-block;
-    text-align:;
+    text-align:center;
     padding:15px;
     box-shadow:0 5px 20px rgba(0,0,0,.25);
     transition:transform .3s,box-shadow .3s }
@@ -136,7 +143,7 @@ footer {
     min-height:50vh;
     margin:auto;
     margin-top:10vh;
-    text-align: }
+    text-align:center; }
 
 .contacto a {
     color:#e85151;
@@ -158,12 +165,12 @@ footer {
 
 .estadisticas {
     margin:0;
-    justify-content: }
+    justify-content:center; }
 
 .estad {
     margin:1%;
     display:inline-block;
-    text-align:;
+    text-align:center;
     box-shadow:0 5px 20px rgba(0,0,0,.25);
     transition:transform .3s,box-shadow .3s; }
 
@@ -176,7 +183,7 @@ footer {
 .fa {
     font-size:50px;
     text-decoration:none;
-    text-align: }
+    text-align:center; }
 
 .form_container {
     border-radius:5px }
@@ -205,6 +212,10 @@ footer {
 .imagenes-catalogo {
     width:100% }
 
+.location{
+  width: 100% !important;
+  height: calc(1.5em + .75rem + 2px)!important;
+  }
 .logofoot {
     margin-top:5%;
     height:80px;
@@ -267,7 +278,7 @@ footer {
     font-weight:700;
     position:relative;
     display:inline-flex;
-    text-align:;
+    text-align:center;
     vertical-align:middle; }
 
     .titulo_recepcion {
@@ -286,4 +297,4 @@ footer {
     margin-top:30px;
     padding:5px;
     display:inline-flex;
-    justify-content:; }
+    justify-content:center; }

@@ -1,5 +1,5 @@
 <?php
-
+//FUNCION PARA VALIDAR LOS CAMPOS DE LA REGISTARCION
 function registerValidate(){
 
   global $name;
@@ -10,7 +10,6 @@ function registerValidate(){
   $email = trim($_POST["email"]);
   $pass = trim($_POST["pass"]);
   $rePass = trim($_POST["rePass"]);
-  $stringPassword = '';
 
   $errores = [];
 
@@ -20,27 +19,27 @@ function registerValidate(){
 
   if ( $username === "" ) {
     $errores ["username"] = "Error. El usuario es obligatorio <br>";
+  } elseif ( userexist($username) === true ) {
+    $errores["username"] = "Ese usuario ya está registrado";
   }
 
   if ( $email === "" ) {
     $errores ["email"] = "Error. El email es obligatorio <br>";
   } elseif ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
     $errores ["email"] = "Error. El email debe tener un formato válido <br>";
+  } elseif ( mailexist($email) === true ) {
+    $errores["email"] = "Ese correo ya está registrado";
   }
 
   if ( $pass === "" ) {
     $errores ["pass"] = "Error. El password es obligatorio <br>";
   } elseif ( strlen($pass) < 5 ) {
     $errores ["pass"] = "Error. El password debe tener más de 5 letras <br>";
-  } elseif ( !(contieneDH($pass)) ) {
+  } elseif ( !contieneDH($pass) ) {
     $errores ["pass"] = "Error. El password debe tener las letras DH en él <br>";
   }
 
-  function contieneDH($stringPassword){
-    if (strpos($stringPassword, 'DH')) {
-    return true;} else {
-      return false;}
-  }
+
 
   if ( $rePass === "" ) {
     $errores ["rePass"] = "Error. El password es obligatorio <br>";
@@ -50,7 +49,23 @@ function registerValidate(){
 
   return $errores;
 
+
 }
+//FUNCION PARA VER SI LA PASSWORD CONTIENE "DH"
+function contieneDH($pass){
+
+  $pass = trim($_POST["pass"]);
+
+  //PARA HACER CON STRPOS
+  // if ( strpos($pass, 'DH') === false || strpos($pass, 'DH') < 0 ) {
+
+  if ( preg_match("/DH/", $pass) ) {
+    return true;
+  }
+  return false;
+
+}
+
 
 function saveImage(){
   // Si el error de subida es igual a 0
@@ -85,5 +100,11 @@ function passHash(){
   $_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 }
 
+function debug($dato) {
+  echo "<pre>";
+  var_dump($dato);
+  echo "</pre>";
+  exit;
+}
 
 ?>

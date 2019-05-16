@@ -1,5 +1,6 @@
 <?php
 
+
 function getAllUsers(){
 
     $fileContent=file_get_contents(dirname(__FILE__) . '/data/users.json');
@@ -47,17 +48,40 @@ function saveUser(){
 }
 
 
-function mailexist(){
+function mailexist($email){
 
-  $allUsers = getAllUsers($email);
+  // $email = trim($_POST["email"]);
+  $allUsers = getAllUsers();
 
   foreach ($allUsers as $anyUser) {
-    $mailRepetedError = ($anyUser['email']==$email) ? true : false ;
-      // code...
-    }
-    return $mailRepetedError;
-  }
 
+    if ($anyUser['email']===$email){
+      return true;
+    } }
+    return false;
+
+    // $mailRepetedError = ($anyUser['email']==$email) ? true : false ;
+      // code...
+    // }
+    // return $mailRepetedError;
+  }
+  function userexist($username){
+
+    // $email = trim($_POST["email"]);
+    $allUsers = getAllUsers();
+
+    foreach ($allUsers as $anyUser) {
+
+      if ($anyUser['username']===$username){
+        return true;
+      } }
+      return false;
+
+      // $mailRepetedError = ($anyUser['email']==$email) ? true : false ;
+        // code...
+      // }
+      // return $mailRepetedError;
+    }
 
 function getUserbyEmail($email){
     $allUsers = getAllUsers();

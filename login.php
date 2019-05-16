@@ -11,6 +11,8 @@ include 'controller-json.php';
   <!-- nav bar -->
 
 <?php require_once 'partials/navbar.php' ?>
+<div class="container">
+
 
      <div class="formsignup">
 
@@ -41,7 +43,7 @@ include 'controller-json.php';
       </div>
 
 </div>
-
+</div>
 <!-- FOOTER -->
 
 <?php require_once 'partials/footer.php' ?>
