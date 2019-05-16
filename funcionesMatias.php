@@ -39,8 +39,6 @@ function registerValidate(){
     $errores ["pass"] = "Error. El password debe tener las letras DH en él <br>";
   }
 
-
-
   if ( $rePass === "" ) {
     $errores ["rePass"] = "Error. El password es obligatorio <br>";
   } elseif ( $rePass != $pass ) {
