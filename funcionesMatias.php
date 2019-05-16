@@ -37,9 +37,9 @@ function registerValidate(){
   }
 
   function contieneDH($stringPassword){
-    if (strpos($stringPassword, 'DH')) {
-    return true;} else {
-      return false;}
+    if (strpos($stringPassword, 'DH') == false) {
+    return false;};
+      return true;
   }
 
   if ( $rePass === "" ) {
