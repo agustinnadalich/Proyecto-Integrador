@@ -8,6 +8,7 @@ require_once 'partials/head.php';
 include 'funcionesMatias.php';
 include 'controller-json.php';
 ?>
+
   <!-- nav bar -->
 
 <?php require_once 'partials/navbar.php' ?>

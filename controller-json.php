@@ -93,4 +93,40 @@ function getUserbyEmail($email){
     }
 
 }
+function changeInfo(){
+
+  if (isset($_POST['name'])){
+
+    $allUsers = getAllUsers();
+    $myUser = getUserByEmail($_POST['email']);
+
+    $myUser['name']= trim($_POST['name']);
+    $myUser['username']= trim($_POST['username']);
+    $myUser['pass']= password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
+    // unset($_POST['rePass']);
+    // $myUser['pais']= $_POST(['pais']);
+
+    $allUsers[($myUser['id'] - 1)] = $myUser;
+
+    $allUsersJson=json_encode($allUsers);
+
+    file_put_contents(dirname(__FILE__) . '/data/users.json', $allUsersJson);
+
+    return $myUser;
+
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
  ?>
