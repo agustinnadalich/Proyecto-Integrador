@@ -23,7 +23,6 @@ function generateID() {
     return $lastUser['id'] +1;
 }
 
-
 function saveUser(){
 
 
@@ -46,7 +45,6 @@ function saveUser(){
 
     return $newUser;
 }
-
 
 function mailexist($email){
 
@@ -93,6 +91,7 @@ function getUserbyEmail($email){
     }
 
 }
+
 function changeInfo(){
 
   if (isset($_POST['name'])){
@@ -120,13 +119,5 @@ function changeInfo(){
 
 
 }
-
-
-
-
-
-
-
-
 
  ?>

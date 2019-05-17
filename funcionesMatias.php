@@ -64,7 +64,6 @@ function contieneDH($pass){
 
 }
 
-
 function saveImage(){
   // Si el error de subida es igual a 0
   if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
@@ -103,6 +102,14 @@ function debug($dato) {
   var_dump($dato);
   echo "</pre>";
   exit;
+}
+
+function isLogged() {
+  return isset($_SESSION["userLoged"]);
+}
+
+function loginValidate(){
+  
 }
 
 ?>

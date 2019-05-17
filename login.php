@@ -1,12 +1,33 @@
 <!-- Head -->
 
 <?php
+
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
 $pagetitle= "LOGIN";
 require_once 'partials/head.php';
 include 'funcionesMatias.php';
 include 'controller-json.php';
+
+if ( isLogged() ) {
+  header('location: profile.php');
+  exit;
+}
+
+$erroresLogin=[];
+$email="";
+
+if ($_POST) {
+  $email = trim($_POST["email"]);
+  $erroresLogin = loginValidate();
+  if ( !$erroresLogin ) {
+    // logueamos al usuario
+    $userToLogin = getUserByEmail($email);
+
+    login ($userToLogin);
+  }
+}
+
 ?>
 
   <!-- nav bar -->
@@ -24,14 +45,28 @@ include 'controller-json.php';
              <div class="col-12">
                <div class="form-group">
                   <label class="textoform" for="email">Email | Usuario:</label>
-                    <input type="email" name="email" value="">
+                    <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    value="">
                 </div>
               </div>
             <div class="col-12">
               <div class="form-group">
           <label class="textoform" for="pass">Contraseña</label>
-          <input type="password" name="pass" value="">
+          <input
+          type="password"
+          name="pass"
+          class="form-control">
         </div>
+      </div>
+
+      <div class="col-12">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="recordarUser">
+        Recordarme
+      </label>
       </div>
 
         <div class="col-12">
