@@ -36,8 +36,18 @@ if ($_POST) {
 <div class="container">
 
 
-     <div class="formsignup">
+  <?php if (count($erroresLogin) > 0): ?>
+    <div class="alert alert-danger">
+      <ul>
+        <?php foreach ($erroresLogin as $unError): ?>
+          <li> <?= $unError; ?> </li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php endif; ?>
 
+
+     <div class="formsignup">
 
        <form class="" action="navbarpi.php" method="post">
          <div class="container">

@@ -109,7 +109,26 @@ function isLogged() {
 }
 
 function loginValidate(){
-  
+  $errores= [];
+  $email= trim($_POST["email"]);
+  $pass= trim($_POST["pass"]);
+
+  if ( empty($email) ) {
+    $errores["email"] = "El campo email es obligatorio";
+  } elseif ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+    $errores["email"] = "Introducí un formato de email válido";
+  } elseif ( !mailExist($email) ) {
+    $errores["email"] = "Las credenciales no coinciden";
+  } else {
+    $usuario = getUserByEmail($email);
+  }
+
+  if ( empty($pass) ) {
+    $errors["pass"] = "El campo password es obligatorio";
+  }
+
+  return $errores;
+
 }
 
 ?>
