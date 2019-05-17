@@ -1,1 +1,6 @@
-[{"name":"Juan Agustin Nadalich","username":"uno","email":"agustin.nadalich@gmail.com","pass":"$2y$10$qZpCzwfqJFHsARmLfwM5ieyLhkPN6Ea8i07Ya0b1KaG7mTz2FFp5q","pais":"Argentina","id":1},{"name":"PEPE","username":"GRILLO","email":"agustin.nadalich@gmail.com1","pass":"$2y$10$z1BFHIP8S2to2Be4qb4QY.wjUwC.7FjPsp9eqDqoZ9krakCDpgmZm","pais":"Bolivia","id":2},{"name":"JUAN","username":"CITO","email":"agustin.nadalich@gmail.com3","pass":"$2y$10$VNQaT8jya\/SeY6mbUifZTeyUaTuNHUPhQJEXhifFwIGnDqQrpQE9y","pais":"Brasil","id":3},{"name":"OCHO","username":"NUEVE","email":"DIEZ@ONCE.COM","pass":"$2y$10$qOfjMbtPOA0ao1gvtVE1f.Th0dgmQ6GENh1lVOgmN8Ij1h6sR.4FG","pais":"Mexico","id":4},{"name":"PPPPPPPPPPPPPPP","username":"UUUUUUUUUUUUUUUUUU","email":"ONCE@ONCE.COM","pass":"$2y$10$VaJnYXssc2U0kSx6Y55RJOqls9BE29OpMmy9apq4Lsjw1KSFBRau2","pais":"Mexico","id":5},{"name":"Juan Agustin Nadalich","username":"agusss","email":"agustin.nadalich@gmail.com6","pass":"$2y$10$8EzML1EDJD1b0ZK9rI9cI.waMjwQeG8QSIzCTjKn3DgVN2y10WkG6","pais":"Argentina","id":6}]
+[
+  {"name":"agfasda","username":"papapapapap","email":"agustin.nadalich@gmail.com","pass":"$2y$10$qZpCzwfqJFHsARmLfwM5ieyLhkPN6Ea8i07Ya0b1KaG7mTz2FFp5q","pais":"Argentina","id":1},
+  {"name":"PEPE","username":"GRILLO","email":"agustin.nadalich@gmail.com1","pass":"$2y$10$z1BFHIP8S2to2Be4qb4QY.wjUwC.7FjPsp9eqDqoZ9krakCDpgmZm","pais":"Bolivia","id":2},
+  {"name":"Juan Agustin Nadalich","username":"nuevo","email":"agustin.nadalich@gmail.com3","pass":"$2y$10$VNQaT8jya\/SeY6mbUifZTeyUaTuNHUPhQJEXhifFwIGnDqQrpQE9y","pais":"Brasil","id":3},
+
+]

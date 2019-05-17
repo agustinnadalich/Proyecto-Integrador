@@ -5,6 +5,29 @@
 
 $pagetitle= "PERFIL";
 require_once 'partials/head.php';
+
+// Traer de session
+$paisDelUser = "";
+
+$paises = [
+		'ar' => 'Argentina',
+		'bo' => 'Bolivia',
+		'br' => 'Brasil',
+		'co' => 'Colombia',
+		'cl' => 'Chile',
+		'cr' => 'Costa Rica',
+		'cu' => 'Cuba',
+		'ec' => 'Ecuador',
+		'ho' => 'Honduras',
+		'gu' => 'Guatemala',
+		'mx' => 'Mexico',
+		'ni' => 'Nicaragua',
+		'pa' => 'Paraguay',
+		'pn' => 'Panama',
+		'pe' => 'Perú',
+		'uy' => 'Uruguay',
+		've' => 'Venezuela',
+];
 ?>
   <!-- nav bar -->
 
@@ -33,7 +56,17 @@ require_once 'partials/head.php';
             </p>
             <p>
               <label class="textoform" for="lugar">País/Ciudad:</label>
-              <input id="pass"type="text" name="" value="">
+              <select class="location" name="pais">
+							<option value="0"></option>
+								<?php foreach ($paises as $code => $pais): ?>
+									<option
+									value="<?= $pais ?>"
+									<?= $pais == $paisDelUser ? 'selected' : null; ?>
+									>
+									<?= $pais ?>
+									</option>
+								<?php endforeach; ?>
+							</select>
             </p>
             <p>
               <label class="textoform" for="ocup">Ocupación:</label>
