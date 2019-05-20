@@ -19,12 +19,19 @@ $email="";
 
 if ($_POST) {
   $email = trim($_POST["email"]);
+
   $erroresLogin = loginValidate();
+
   if ( !$erroresLogin ) {
     // logueamos al usuario
     $userToLogin = getUserByEmail($email);
 
     login ($userToLogin);
+
+    unset($userToLogin["pass"]);
+
+    header('location: profile.php');
+    exit;
   }
 }
 
@@ -56,7 +63,7 @@ if ($_POST) {
                <div class="form-group">
                   <label class="textoform" for="email">Email | Usuario:</label>
                     <input
-                    type="email"
+                    type="text"
                     name="email"
                     class="form-control"
                     value="">

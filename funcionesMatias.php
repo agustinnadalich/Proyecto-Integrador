@@ -121,6 +121,10 @@ function loginValidate(){
     $errores["email"] = "Las credenciales no coinciden";
   } else {
     $usuario = getUserByEmail($email);
+    // verifico el pass que puso con el del usuario que saque recien, que sé que existe y no tiene errores
+    if ( !password_verify($pass, $usuario["pass"]) ) {
+      $errors["pass"] = "Las credenciales no coinciden";
+    }
   }
 
   if ( empty($pass) ) {
@@ -129,6 +133,10 @@ function loginValidate(){
 
   return $errores;
 
+}
+
+function login($userToLogin){
+  $_SESSION["userLoged"] = $userToLogin;
 }
 
 ?>
