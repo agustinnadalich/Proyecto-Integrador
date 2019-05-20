@@ -10,7 +10,7 @@ include 'funcionesMatias.php';
 include 'controller-json.php';
 
 if ( isLogged() ) {
-  header('location: profile.php');
+  header("location: profile.php");
   exit;
 }
 
@@ -56,7 +56,7 @@ if ($_POST) {
 
      <div class="formsignup">
 
-       <form class="" action="navbarpi.php" method="post">
+       <form class="" method="post">
          <div class="container">
            <div class="row">
              <div class="col-12">

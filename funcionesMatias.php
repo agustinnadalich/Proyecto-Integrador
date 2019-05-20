@@ -1,5 +1,6 @@
 <?php
 //FUNCION PARA VALIDAR LOS CAMPOS DE LA REGISTARCION
+	session_start();
 function registerValidate(){
 
   global $name;
@@ -123,12 +124,12 @@ function loginValidate(){
     $usuario = getUserByEmail($email);
     // verifico el pass que puso con el del usuario que saque recien, que sé que existe y no tiene errores
     if ( !password_verify($pass, $usuario["pass"]) ) {
-      $errors["pass"] = "Las credenciales no coinciden";
+      $errores["pass"] = "Las credenciales no coinciden";
     }
   }
 
   if ( empty($pass) ) {
-    $errors["pass"] = "El campo password es obligatorio";
+    $errores["pass"] = "El campo password es obligatorio";
   }
 
   return $errores;

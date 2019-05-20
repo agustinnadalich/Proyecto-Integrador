@@ -1,6 +1,5 @@
 <?php
 
-
 function getAllUsers(){
 
     $fileContent=file_get_contents(dirname(__FILE__) . '/data/users.json');
