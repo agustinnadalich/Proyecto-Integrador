@@ -1,5 +1,6 @@
 <?php
 //FUNCION PARA VALIDAR LOS CAMPOS DE LA REGISTARCION
+
 	session_start();
 function registerValidate(){
 
@@ -38,6 +39,9 @@ function registerValidate(){
     $errores ["pass"] = "Error. El password debe tener más de 5 letras <br>";
   } elseif ( !contieneDH($pass) ) {
     $errores ["pass"] = "Error. El password debe tener las letras DH en él <br>";
+  }
+	 	elseif ( strpos($pass , " ") == true) {
+    $errores ["pass"] = "Error. El password no puede conetener espacios <br>";
   }
 
   if ( $rePass === "" ) {
@@ -139,5 +143,6 @@ function loginValidate(){
 function login($userToLogin){
   $_SESSION["userLoged"] = $userToLogin;
 }
+
 
 ?>
