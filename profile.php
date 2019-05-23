@@ -33,7 +33,7 @@ $paises = [
 
 <?php require_once 'partials/navbar.php' ?>
 
-<?php var_dump($_SESSION); ?>
+
                       <!-- container -->
 <div class="profile_container">
   <div class="row">
@@ -44,15 +44,15 @@ $paises = [
           <form class="" action="profile.php" method="post">
           <p>
             <label class="textoform"  for="nombre">Nombre:</label>
-            <input id="nombre" type="text" name="" value=""placeholder="Juan">
+            <input id="nombre" type="text" name="" value="<?= $_SESSION["userLoged"]['name'];?>"placeholder="Juan">
           </p>
           <p>
-            <label class="textoform" for="apellido">Apellido:</label>
-            <input id="apellido" type="text" name="" value=""placeholder="Pérez">
+            <label class="textoform" for="apellido">Username:</label>
+            <input id="username" type="text" name="" value="<?= $_SESSION["userLoged"]['username'];?>"placeholder="Pérez">
           </p>
             <p>
               <label class="textoform" for="email">Email:</label>
-              <input id="email"type="email" name="email" value=""placeholder="user@email.com">
+              <input disabled id="email"type="email" name="email" value="<?= $_SESSION["userLoged"]['email'];?>"placeholder="user@email.com">
             </p>
             <p>
               <label class="textoform" for="lugar">País/Ciudad:</label>
@@ -61,17 +61,17 @@ $paises = [
 								<?php foreach ($paises as $code => $pais): ?>
 									<option
 									value="<?= $pais ?>"
-									<?= $pais == $paisDelUser ? 'selected' : null; ?>
+									<?= $pais == $_SESSION["userLoged"]['pais'] ? 'selected' : null; ?>
 									>
 									<?= $pais ?>
 									</option>
 								<?php endforeach; ?>
 							</select>
             </p>
-            <p>
+            <!-- <p>
               <label class="textoform" for="ocup">Ocupación:</label>
               <input id="pass"type="text" name="" value="">
-            </p>
+            </p> -->
             <br>
             <a class="a_btn"href="profile.php">Guardar cambios</a>
       </div>

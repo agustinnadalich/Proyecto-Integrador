@@ -41,7 +41,7 @@ $cantFiltros = count($filtros);
 <?php
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
-$pagetitle= "CATALOGO";
+$pagetitle= "CATÁLOGO";
 require_once 'partials/head.php';
 ?>
   <!-- nav bar -->
@@ -82,6 +82,7 @@ require_once 'partials/head.php';
                   <img src=<?php echo $producto["imagen"] ?> width="100%" alt="Etiqueta producto 1" class="imagenes-catalogo">
       						<h2> <?php echo $producto["nombre"] ?> </h2>
       						<p> <?php echo $producto["detalle"] ?> </p>
+                  <a class="a_btn"href="ver_producto.php">Ver producto</a>
       					</div>
       				<?php endforeach; ?>
             </div>
