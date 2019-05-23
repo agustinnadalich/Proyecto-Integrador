@@ -10,7 +10,7 @@ include 'funcionesMatias.php';
 include 'controller-json.php';
 
 if ( isLogged() ) {
-  header("location: profile.php");
+  header("Location: profile.php");
   exit;
 }
 
@@ -26,7 +26,7 @@ if ($_POST) {
     // logueamos al usuario
     $userToLogin = getUserByEmail($email);
 
-    login ($userToLogin);
+    login($userToLogin);
 
     unset($userToLogin["pass"]);
 
@@ -36,7 +36,11 @@ if ($_POST) {
 }
 
 ?>
+<?php
 
+// var_dump(getUserByEmail($_POST['email']));
+// echo "<br>";
+// var_dump(password_verify($anyUser['pass'] ==  $_POST["pass"]) );?>
   <!-- nav bar -->
 
 <?php require_once 'partials/navbar.php' ?>

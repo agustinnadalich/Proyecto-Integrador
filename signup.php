@@ -2,13 +2,16 @@
 
 
 
-
 $pagetitle= "REGISTRO";
 require_once 'partials/head.php';
 include 'funcionesMatias.php';
 include 'controller-json.php';
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
+if ( isLogged() ) {
+  header("location: profile.php");
+  exit;
+}
 
 
  ?>
@@ -71,12 +74,18 @@ $paises = [
 		// si todo esta ok
 		if (count($errores) == 0) {
 
-			// Hasheamos la contraseña antes de guardar
-      passHash();
+			// // Hasheamos la contraseña antes de guardar
+     // passHash();
 
       // Salvo el usuario
-      saveUser();
+      $userToLogin = saveUser();
 
+
+      login($userToLogin);
+
+      //unset($userToLogin["pass"]);
+
+      //header('location: profile.php');
 			// Redirección al salir todo ok
 			header("location: profile.php");
 			exit;

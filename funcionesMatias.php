@@ -4,9 +4,9 @@
 	session_start();
 function registerValidate(){
 
-  global $name;
-  global $username;
-  global $email;
+  // global $name;
+  // global $username;
+  // global $email;
   $name = trim($_POST["name"]);
   $username = trim($_POST["username"]);
   $email = trim($_POST["email"]);
@@ -98,9 +98,9 @@ function saveImage(){
     }
   }
 
-function passHash(){
-  $_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-}
+// function passHash(){
+//   $_POST["pass"] = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+// }
 
 function debug($dato) {
   echo "<pre>";
@@ -127,7 +127,7 @@ function loginValidate(){
   } else {
     $usuario = getUserByEmail($email);
     // verifico el pass que puso con el del usuario que saque recien, que sé que existe y no tiene errores
-    if ( !password_verify($pass, $usuario["pass"]) ) {
+    if ( !password_verify($pass, $usuario['pass']) ) {
       $errores["pass"] = "Las credenciales no coinciden";
     }
   }
@@ -141,7 +141,8 @@ function loginValidate(){
 }
 
 function login($userToLogin){
-  $_SESSION["userLoged"] = $userToLogin;
+	 unset($user['password']);
+	 $_SESSION["userLoged"] = $userToLogin;
 }
 
 
