@@ -171,12 +171,12 @@ footer {
 }
 
 .navbar_rec {
-background-color: #ebccb6;
-height:100px;
-width:100%;
-position: fixed;
-top: 0;
-z-index: 1;
+  background-color: #ebccb6;
+  height:100px;
+  width:100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .nav-link:hover {
