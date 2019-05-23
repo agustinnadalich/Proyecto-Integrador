@@ -1,4 +1,6 @@
 
+<?php   require_once 'funcionesMatias.php'; ?>
+
     <nav class="navbar navbar-expand-md sticky-top" role="navitation">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target">
@@ -9,7 +11,7 @@
 
                         <div class="collapse navbar-collapse" id="collapse_target">
                           <a class="navbar-brand" href="index.php"><img class="logo_JM" src="img/logo_JM.png" height="50" width="50"></a>
-                          <a class="navbar-text"href="profile.php">Username</a>
+                          <a class="navbar-text"href="profile.php"><?= $_SESSION["userLoged"]['username'];?></a>
 
                         <!-- links navbar -->
 

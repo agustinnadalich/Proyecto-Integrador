@@ -33,7 +33,7 @@ $paises = [
 
 <?php require_once 'partials/navbar.php' ?>
 
-
+<?php var_dump($_SESSION); ?>
                       <!-- container -->
 <div class="profile_container">
   <div class="row">

@@ -37,7 +37,7 @@
 
     <div class="collapse navbar-collapse" id="collapse_target">
       <a class="navbar-brand"><img class="logo_JM" src="img/logo_JM.png" height="50" width="50"></a>
-      <span class="navbar-text">User Name</span>
+      <span class="navbar-text"></span>
 
                         <!-- links navbar -->
 
