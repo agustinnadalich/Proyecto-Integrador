@@ -6,8 +6,7 @@
 
 $pagetitle= "LOGIN";
 require_once 'partials/head.php';
-include 'funcionesMatias.php';
-include 'controller-json.php';
+
 
 if ( isLogged() ) {
   header("Location: profile.php");

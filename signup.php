@@ -4,9 +4,6 @@
 
 $pagetitle= "REGISTRO";
 require_once 'partials/head.php';
-include 'funcionesMatias.php';
-include 'controller-json.php';
-// TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
 if ( isLogged() ) {
   header("location: profile.php");
@@ -107,7 +104,7 @@ $paises = [
 
 					<div class="col-6">
 						<div class="form-group">
-							<label for="nombre">Nombre completo:</label>
+							<label for="name">Nombre completo:</label>
 			        <input type="text" name="name" value="<?php echo $name; ?>" class="form-control">
 			        <?php if ( isset($errores["name"]) ): ?>
 								<p style = "color: red; font-weight: bold"><?= $errores["name"]; ?></p>

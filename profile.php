@@ -28,10 +28,23 @@ $paises = [
 		'uy' => 'Uruguay',
 		've' => 'Venezuela',
 ];
+
+
 ?>
   <!-- nav bar -->
 
-<?php require_once 'partials/navbar.php' ?>
+<?php require_once 'partials/navbar.php';
+
+var_dump($_POST);
+
+// debug(changeInfo());
+
+if ($_POST) {
+	$theUser = changeInfo();
+}
+
+?>
+
 
 
                       <!-- container -->
@@ -43,20 +56,20 @@ $paises = [
         <h2>Mi Perfil</h2>
           <form class="" action="profile.php" method="post">
           <p>
-            <label class="textoform"  for="nombre">Nombre:</label>
-            <input id="nombre" type="text" name="" value="<?= $_SESSION["userLoged"]['name'];?>"placeholder="Juan">
+            <label class="textoform"  for="name">Nombre:</label>
+            <input id="name" type="text" name="name" value="<?= $_SESSION["userLoged"]['name'];?>">
           </p>
           <p>
-            <label class="textoform" for="apellido">Username:</label>
-            <input id="username" type="text" name="" value="<?= $_SESSION["userLoged"]['username'];?>"placeholder="Pérez">
+            <label class="textoform" for="username">Username:</label>
+            <input id="username" type="text" name="username" value="<?= $_SESSION["userLoged"]['username'];?>">
           </p>
             <p>
               <label class="textoform" for="email">Email:</label>
-              <input disabled id="email"type="email" name="email" value="<?= $_SESSION["userLoged"]['email'];?>"placeholder="user@email.com">
+              <input readonly type="email" name="email" value="<?= $_SESSION["userLoged"]['email'];?>">
             </p>
             <p>
-              <label class="textoform" for="lugar">País/Ciudad:</label>
-              <select class="location" name="pais">
+              <label class="textoform" for="pais">País/Ciudad:</label>
+              <select class="pais" name="pais">
 							<option value="0"></option>
 								<?php foreach ($paises as $code => $pais): ?>
 									<option
@@ -73,7 +86,7 @@ $paises = [
               <input id="pass"type="text" name="" value="">
             </p> -->
             <br>
-            <a class="a_btn"href="profile.php">Guardar cambios</a>
+            <button type="submit" class="a_btn">Guardar Cambios</button>
       </div>
       <!-- 1 columna -->
       <!-- 2 columna -->

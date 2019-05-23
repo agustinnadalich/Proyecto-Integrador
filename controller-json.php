@@ -93,9 +93,8 @@ function getUserbyEmail($email){
 
 function changeInfo(){
 
-
-  // $theUser =
-  // $myUser = getUserByEmail($_POST['email']);
+  $email = $_POST['email'];
+  $theUser = getUserByEmail($_POST['email']);
 
 // Este if tiene que ir en profile antes de ejecutar la funcion
   // if (isset($_POST['name'])){
@@ -103,25 +102,30 @@ function changeInfo(){
     $allUsers = getAllUsers();
 
     foreach ($allUsers as $pos => $user) {
-      if ($user['email'] == $_POST['email']) {
+      if ($theUser['email'] == $_POST['email']) {
         $thePosition = $pos;
         $theUser = $user;
       }}
 
 
-    $theUser['name']= trim($_POST['name']);
-    $theUser['username']= trim($_POST['username']);
+    $user['name']= trim($_POST['name']);
+    $user['username']= trim($_POST['username']);
+    $user['pais']= trim($_POST['pais']);
     // $theUser['pass']= password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
     // unset($_POST['rePass']);
     // $theUser['pais']= $_POST(['pais']);
 
-    $allUsers[$thePosition] = $theUser;
+    $allUsers[$thePosition] = $user;
+
+    $_SESSION["userLoged"] = $user;
 
     $allUsersJson=json_encode($allUsers);
 
     file_put_contents(dirname(__FILE__) . '/data/users.json', $allUsersJson);
 
-    return $theUser;
+    // header("location: profile.php");
+
+    return $user;
 
     // }
   }
