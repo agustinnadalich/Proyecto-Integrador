@@ -1,6 +1,9 @@
 
+    <div class="navbar_rec">
 
+    </div>
 
+    
     <nav class="navbar navbar-expand-md sticky-top" role="navitation">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target">
@@ -42,9 +45,5 @@
        </ul>
       </div>
 
-        <form class="form-inline my-2 my-lg-0">
-       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-       <button class="btn_busqueda btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-       </form>
 
      </nav>
