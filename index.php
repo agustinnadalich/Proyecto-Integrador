@@ -12,6 +12,10 @@ require_once 'partials/head.php';
 
     <!-- Banner-->
 
+<div class="navbar_rec">
+
+</div>
+
 <section class="recepcion">
   <div class="div_titulo_recepcion">
 
