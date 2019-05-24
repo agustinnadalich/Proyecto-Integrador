@@ -71,7 +71,7 @@ p {
 footer {
   height:130px;
   width:100%;
-  background-color:#ebccb6;
+  background-color:#f5e7de;
   color:#e85151;
   position:absolute;
   bottom:0;
@@ -182,12 +182,15 @@ footer {
 }
 
 .navbar_rec {
-  background-color: #ebccb6;
+  background-color: #f5e7de;
   height:100px;
   width:100%;
   position: fixed;
   top: 0;
   z-index: 1;
+}
+.nav-link {
+  background-color: #f5e7de;
 }
 
 .nav-link:hover {

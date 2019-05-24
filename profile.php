@@ -93,7 +93,7 @@ if ($_POST) {
       <!-- 2 columna -->
       <div class="donacion col-md-4">
         <article class="article">
-          <img src="img/square.jpg" width="100%"alt="Donación 1">
+          <img src="img/square.jpg" width="50%"alt="Donación 1">
           <h3>Donación 1</h3>
         </article>
       </div>
@@ -101,7 +101,7 @@ if ($_POST) {
       <!-- 3 columna -->
       <div class="donacion col-md-4">
         <article class="article">
-          <img src="img/square.jpg" width="100%" alt="Donación 2">
+          <img src="img/square.jpg" width="50%" alt="Donación 2">
           <h3>Donación 2</h3>
         </article>
       </div>
