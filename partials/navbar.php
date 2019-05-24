@@ -7,7 +7,7 @@
 <nav class="navbar navbar-expand-md sticky-top" role="navitation">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target">
-      <span class="navbar-toggler-icon"><img src="img/hambg.png" height="30" width="30"></span>
+      <span class="navbar-toggler-icon"><img src="img/menu_icon.png" height="30" width="30"></span>
     </button>
 
                       <!-- Look Empresa -->
@@ -39,7 +39,7 @@
            </div>
          </li>
        <?php endif ?>
-       
+
        <li class="nav-item dropdown">
          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target">Menu
           <span class="caret"></span>

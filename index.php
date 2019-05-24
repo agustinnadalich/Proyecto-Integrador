@@ -19,7 +19,7 @@ require_once 'partials/head.php';
 <section class="recepcion">
   <div class="div_titulo_recepcion">
 
-    <h1 class="titulo_recepcion">Entre todos, podemos ayudarnos para dar una mano a quien mas lo necesita.</h1>
+    <h1 class="titulo_recepcion">Entre todos podemos ayudarnos para dar una mano a quien más lo necesita.</h1>
 
   </div>
 

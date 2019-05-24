@@ -65,7 +65,7 @@ if ($_POST) {
           </p>
             <p>
               <label class="textoform" for="email">Email:</label>
-              <input readonly type="email" name="email" value="<?= $_SESSION["userLoged"]['email'];?>">
+              <input readonly type="email" name="email" value="<?= $_SESSION["userLoged"]['email'];?>" style="background-color: lightgray;">
             </p>
             <p>
               <label class="textoform" for="pais">País/Ciudad:</label>
