@@ -39,7 +39,7 @@
            </div>
          </li>
        <?php endif ?>
-       
+
        <li class="nav-item dropdown">
          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target">Menu
           <span class="caret"></span>
