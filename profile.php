@@ -35,7 +35,8 @@ $paises = [
 
 <?php require_once 'partials/navbar.php';
 
-// var_dump($_POST);
+
+// var_dump(dirname(__FILE__) . "/data/avatars/" . "img_5ce851aa2f692.jpg");
 
 // debug(changeInfo());
 
@@ -52,7 +53,7 @@ if ($_POST) {
   <div class="row">
       <!-- 1 columna -->
       <div class="col-md-4">
-        <img class="profile_pic"width="50%"src="img/polaroid_frame.png" alt="Foto de perfil">
+        <img class="profile_pic"width="50%"src="data/avatars/<?= $_SESSION["userLoged"]['avatar']; ?>"alt="Foto de perfil">
         <h2>Mi Perfil</h2>
           <form class="" action="profile.php" method="post">
           <p>

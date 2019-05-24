@@ -1,7 +1,7 @@
 <?php
 
-include 'funciones/funcionesMatias.php';
-include 'funciones/controller-json.php';
+require_once 'funciones/funcionesMatias.php';
+require_once 'funciones/controller-json.php';
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
 
@@ -55,7 +55,7 @@ $paises = [
       $_POST["avatar"] = $nombreImg;
 
       // Salvo el usuario
-      saveUser();
+      $usuario= saveUser();
 
       //seteo cookie para tenerlo en sesion
       setcookie("userLoged", $usuario["email"], time() + 3000);
@@ -65,6 +65,9 @@ $paises = [
 
 			// Redirección al salir todo ok
 			header("location: profile.php");
+
+      // debug($nombreImg);
+      // debug($FILES);
 			exit;
 		}
 		// si todo esta ok

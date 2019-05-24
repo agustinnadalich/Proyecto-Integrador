@@ -1,4 +1,5 @@
 <?php
+require_once 'funciones/controller-json.php';
 //FUNCION PARA VALIDAR LOS CAMPOS DE LA REGISTARCION
 	session_start();
 	define('ALLOWED_IMAGE_FORMATS', ['jpg', 'jpeg', 'png', 'gif']);
@@ -6,18 +7,18 @@
 	//si esta seteada la cookie y si no esta logueado, lo pongo en sesion
 	if ( isset($_COOKIE['userLoged']) && !isLogged() ) {
 		// Busco al usuario por el email que tengo almacenado en la cookie
-		$usuario = getUserByEmail($_COOKIE["userLoged"]);
+		$user  = getUserByEmail($_COOKIE["userLoged"]);
 
 		// Guardo en sesión al usuario que bisqué anteiormente
-		$_SESSION["userLoged"] = $usuario;
+		$_SESSION["userLoged"] = $user;
 	}
 
 function registerValidate(){
 
-  global $name;
-  global $username;
-  global $email;
-	global $avatar;
+  // global $name;
+  // global $username;
+  // global $email;
+	// global $avatar;
   $name = trim($_POST["name"]);
   $username = trim($_POST["username"]);
   $email = trim($_POST["email"]);
@@ -100,7 +101,7 @@ function saveImage(){
 
     // Definimos el destino en donde se guardará la imagen
     // dirname(__FILE__) nos deja ubicados en la posición de este archivo
-    $destino = dirname(__FILE__) . "../data/avatars/" . $nombreImagenFinal;
+    $destino = dirname(__DIR__,1) . "/data/avatars/" . $nombreImagenFinal;
 
     // Subimos finalmente la imagen a donde deseamos
     move_uploaded_file($archivoTemporal, $destino);

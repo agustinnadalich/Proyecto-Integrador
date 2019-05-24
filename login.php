@@ -25,9 +25,11 @@ if ($_POST) {
     // logueamos al usuario
     $userToLogin = getUserByEmail($email);
 
+    // Preguntamos si quiere ser recordado
     if ( isset($_POST["recordarUser"]) ) {
-      setcookie("userLoged", $email, time() + 3000);
+      setcookie('userLoged', $email, time() + 3000);
     }
+
 
     login($userToLogin);
 
@@ -46,9 +48,7 @@ if ($_POST) {
 // var_dump(password_verify($anyUser['pass'] ==  $_POST["pass"]) );?>
   <!-- nav bar -->
 
-<?php require_once 'partials/navbar.php' ?>
-
-
+<?php require_once 'partials/navbar.php';?>
 <div class="container">
 
 
@@ -70,13 +70,12 @@ if ($_POST) {
            <div class="row">
              <div class="col-12">
                <div class="form-group">
-                  <label class="textoform" for="email">Email</label>
+                  <label class="textoform" for="email">Email | Usuario:</label>
                     <input
                     type="text"
                     name="email"
                     class="form-control"
-                    value="<?= $email; ?>"
-                    >
+                    value="">
                 </div>
               </div>
             <div class="col-12">

@@ -40,7 +40,8 @@ function saveUser(){
 
     $allUsersJson=json_encode($allUsers);
 
-    file_put_contents(dirname(__DIR__, 1) . '/data/users.json', $allUsersJson);
+    file_put_contents(dirname(__DIR__,1) . "/data/users.json", $allUsersJson);
+
 
     return $newUser;
 }
