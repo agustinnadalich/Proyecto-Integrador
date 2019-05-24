@@ -1,22 +1,11 @@
 <?php
 
-
-
-$pagetitle= "REGISTRO";
-require_once 'partials/head.php';
-
-if ( isLogged() ) {
-  header("location: profile.php");
-  exit;
-}
+include 'funciones/funcionesMatias.php';
+include 'funciones/controller-json.php';
+// TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
 
  ?>
-
- <!-- nav bar -->
- <?php require_once 'partials/navbar.php' ?>
- <!-- nav bar -->
-
 
 <!-- paises -->
 <?php
@@ -43,16 +32,6 @@ $paises = [
 <!-- paises -->
 
 
-<!-- validaciones img -->
-<?php
-		// si está seteado en $_FILES la posición "avatar"
-		if (isset($_FILES["avatar"])) {
-			saveImage();
-		}
-?>
-<!-- validaciones img -->
-
-
 <!-- validaciones user, mail, pass -->
 <?php
 
@@ -71,18 +50,13 @@ $paises = [
 		// si todo esta ok
 		if (count($errores) == 0) {
 
-			// // Hasheamos la contraseña antes de guardar
-     // passHash();
+      // guardo la img
+			$nombreImg = saveImage();
+      $_POST["avatar"] = $nombreImg;
 
       // Salvo el usuario
-      $userToLogin = saveUser();
+      saveUser();
 
-
-      login($userToLogin);
-
-      //unset($userToLogin["pass"]);
-
-      //header('location: profile.php');
 			// Redirección al salir todo ok
 			header("location: profile.php");
 			exit;
@@ -90,6 +64,12 @@ $paises = [
 		// si todo esta ok
 
 }
+
+
+
+$pagetitle= "REGISTRO";
+require_once 'partials/head.php';
+require_once 'partials/navbar.php';
 ?>
 <!-- validaciones user, mail, pass -->
 
@@ -97,14 +77,15 @@ $paises = [
 
 <div class="formsignup">
 
-
-	<form class="formregistro" method="post">
+  <!-- poner method post para que te tome cosas de post -->
+  <!-- poner enctype="multipart/form-data para que te tome cosas del tipo FILES -->
+	<form class="formregistro" method="post" enctype="multipart/form-data">
 			<div class="container">
 				<div class="row">
 
 					<div class="col-6">
 						<div class="form-group">
-							<label for="name">Nombre completo:</label>
+							<label for="nombre">Nombre completo:</label>
 			        <input type="text" name="name" value="<?php echo $name; ?>" class="form-control">
 			        <?php if ( isset($errores["name"]) ): ?>
 								<p style = "color: red; font-weight: bold"><?= $errores["name"]; ?></p>
@@ -174,6 +155,27 @@ $paises = [
 						</div>
 					</div>
 					<!-- pais de nacimiento -->
+
+          <div class="col-6">
+						<div class="form-group">
+		      	<label>Imagen de perfil</label>
+            <div class="custom-file">
+              <input
+                type="file"
+                name="avatar"
+                class="custom-file-input"
+              >
+              <label class="custom-file-label">Elegir archivo</label>
+              <div>
+                <?php if ( isset($errores["avatar"]) ): ?>
+    							<p style = "color: red; font-weight: bold"><?= $errores["avatar"]; ?></p>
+    						<?php endif; ?>
+              </div>
+            </div>
+						</div>
+		      </div>
+
+
 
 					<!-- poner imagen -->
 					<div class="col-12">

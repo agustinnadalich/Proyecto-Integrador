@@ -1,17 +1,19 @@
 <?php
 //FUNCION PARA VALIDAR LOS CAMPOS DE LA REGISTARCION
-
 	session_start();
+	define('ALLOWED_IMAGE_FORMATS', ['jpg', 'jpeg', 'png', 'gif']);
 function registerValidate(){
 
   // global $name;
   // global $username;
   // global $email;
+	// global $avatar;
   $name = trim($_POST["name"]);
   $username = trim($_POST["username"]);
   $email = trim($_POST["email"]);
   $pass = trim($_POST["pass"]);
   $rePass = trim($_POST["rePass"]);
+	$avatar = $_FILES["avatar"];
 
   $errores = [];
 
@@ -34,25 +36,30 @@ function registerValidate(){
   }
 
   if ( $pass === "" ) {
-    $errores ["pass"] = "Error. El password es obligatorio <br>";
+    $errores["pass"] = "Error. El password es obligatorio <br>";
   } elseif ( strlen($pass) < 5 ) {
-    $errores ["pass"] = "Error. El password debe tener más de 5 letras <br>";
+    $errores["pass"] = "Error. El password debe tener más de 5 letras <br>";
   } elseif ( !contieneDH($pass) ) {
-    $errores ["pass"] = "Error. El password debe tener las letras DH en él <br>";
-  }
-	 	elseif ( strpos($pass , " ") == true) {
-    $errores ["pass"] = "Error. El password no puede conetener espacios <br>";
+    $errores["pass"] = "Error. El password debe tener las letras DH en él <br>";
   }
 
   if ( $rePass === "" ) {
-    $errores ["rePass"] = "Error. El password es obligatorio <br>";
+    $errores["rePass"] = "Error. El password es obligatorio <br>";
   } elseif ( $rePass != $pass ) {
-    $errores ["rePass"] = "Error. Las contraseñas deben coincidir <br>";
+    $errores["rePass"] = "Error. Las contraseñas deben coincidir <br>";
   }
 
+	if ( $avatar['error'] != UPLOAD_ERR_OK ) {
+		$errores["avatar"] = "Imagen no subidaaaaaa";
+	} else {
+		$ext = pathinfo($avatar["name"], PATHINFO_EXTENSION);
+
+	if ( !in_array($ext, ALLOWED_IMAGE_FORMATS) ) {
+		$errores["avatar"] = "Formato no permitido";
+	}
+	}
+
   return $errores;
-
-
 }
 //FUNCION PARA VER SI LA PASSWORD CONTIENE "DH"
 function contieneDH($pass){
@@ -70,32 +77,28 @@ function contieneDH($pass){
 }
 
 function saveImage(){
-  // Si el error de subida es igual a 0
-  if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
     // Obtengo el nombre de la imagen
     $nombreDeLaImagen = $_FILES["avatar"]["name"];
     // Del nombre de la imagen obtengo la extensión
     $ext = pathinfo($nombreDeLaImagen, PATHINFO_EXTENSION);
-    // Si la extesión de la imagen NO es JPG, NO es png ni tampoco gif
-    if ($ext != "jpg" && $ext != "png" && $ext != "gif") {
-      echo "Formato invalido";
-    } else {
-      // Si se cumple con el formato valido obtenemos el archivo temporal
-      $archivoTemporal = $_FILES["avatar"]["tmp_name"];
 
-      // Nos creamos un nombre de imagen único usando la extensión que capturamos
-      $nombreImagenFinal = uniqid("img_") . "." . $ext;
+    // obtenemos el archivo temporal
+    $archivoTemporal = $_FILES["avatar"]["tmp_name"];
 
-      // Definimos el destino en donde se guardará la imagen
-      // dirname(__FILE__) nos deja ubicados en la posición de este archivo
-      $destino = dirname(__FILE__) . "data/avatars/" . $nombreImagenFinal;
+    // Nos creamos un nombre de imagen único usando la extensión que capturamos
+    $nombreImagenFinal = uniqid("img_") . "." . $ext;
 
-      // Subimos finalmente la imagen a donde deseamos
-      move_uploaded_file($archivoTemporal, $destino);
+    // Definimos el destino en donde se guardará la imagen
+    // dirname(__FILE__) nos deja ubicados en la posición de este archivo
+    $destino = dirname(__FILE__) . "data/avatars/" . $nombreImagenFinal;
 
-      echo "Imagen se subió";
-    }
-    }
+    // Subimos finalmente la imagen a donde deseamos
+    move_uploaded_file($archivoTemporal, $destino);
+
+    //echo "Imagen se subió";
+
+		return $nombreImagenFinal;
+
   }
 
 // function passHash(){
@@ -127,7 +130,7 @@ function loginValidate(){
   } else {
     $usuario = getUserByEmail($email);
     // verifico el pass que puso con el del usuario que saque recien, que sé que existe y no tiene errores
-    if ( !password_verify($pass, $usuario['pass']) ) {
+    if ( !password_verify($pass, $usuario["pass"]) ) {
       $errores["pass"] = "Las credenciales no coinciden";
     }
   }
@@ -141,9 +144,11 @@ function loginValidate(){
 }
 
 function login($userToLogin){
-	 unset($user['password']);
-	 $_SESSION["userLoged"] = $userToLogin;
+  $_SESSION["userLoged"] = $userToLogin;
+
+
 }
+
 
 
 ?>
