@@ -40,7 +40,7 @@ $paises = [
 	$email = "";
 	$pass = "";
 	$rePass = "";
-	$paisDePost = '';
+	$paisDePost = "";
 
 	if ($_POST) {
 
@@ -56,6 +56,12 @@ $paises = [
 
       // Salvo el usuario
       saveUser();
+
+      //seteo cookie para tenerlo en sesion
+      setcookie("userLoged", $usuario["email"], time() + 3000);
+
+      //lo logueo para tenerlo en sesion
+      login($usuario);
 
 			// Redirección al salir todo ok
 			header("location: profile.php");
