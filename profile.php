@@ -35,7 +35,7 @@ $paises = [
 
 <?php require_once 'partials/navbar.php';
 
-var_dump($_POST);
+// var_dump($_POST);
 
 // debug(changeInfo());
 

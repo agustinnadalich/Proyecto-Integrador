@@ -2,7 +2,7 @@
 
 function getAllUsers(){
 
-    $fileContent=file_get_contents(dirname(__FILE__) . '/data/users.json');
+    $fileContent=file_get_contents(dirname(__DIR__, 1) . '/data/users.json');
 
     $allUsers = json_decode ($fileContent, true);
 
@@ -40,7 +40,7 @@ function saveUser(){
 
     $allUsersJson=json_encode($allUsers);
 
-    file_put_contents(dirname(__FILE__) . '/data/users.json', $allUsersJson);
+    file_put_contents(dirname(__DIR__, 1) . '/data/users.json', $allUsersJson);
 
     return $newUser;
 }
@@ -121,7 +121,7 @@ function changeInfo(){
 
     $allUsersJson=json_encode($allUsers);
 
-    file_put_contents(dirname(__FILE__) . '/data/users.json', $allUsersJson);
+    file_put_contents(dirname(__DIR__, 1) . '/data/users.json', $allUsersJson);
 
     // header("location: profile.php");
 
