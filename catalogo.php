@@ -82,7 +82,7 @@ require_once 'partials/head.php';
                   <img src=<?php echo $producto["imagen"] ?> width="100%" alt="Etiqueta producto 1" class="imagenes-catalogo">
       						<h2> <?php echo $producto["nombre"] ?> </h2>
       						<p> <?php echo $producto["detalle"] ?> </p>
-                  <a class="a_btn"href="'partials/ver_producto.php">Ver producto</a>
+                  <a class="a_btn"href='ver_producto.php'>Ver producto</a>
       					</div>
       				<?php endforeach; ?>
             </div>

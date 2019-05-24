@@ -25,6 +25,10 @@ if ($_POST) {
     // logueamos al usuario
     $userToLogin = getUserByEmail($email);
 
+    if ( isset($_POST["recordarUser"]) ) {
+      setcookie("userLoged", $email, time() + 3000);
+    }
+
     login($userToLogin);
 
     unset($userToLogin["pass"]);
@@ -43,6 +47,8 @@ if ($_POST) {
   <!-- nav bar -->
 
 <?php require_once 'partials/navbar.php' ?>
+
+
 <div class="container">
 
 
@@ -64,12 +70,13 @@ if ($_POST) {
            <div class="row">
              <div class="col-12">
                <div class="form-group">
-                  <label class="textoform" for="email">Email | Usuario:</label>
+                  <label class="textoform" for="email">Email</label>
                     <input
                     type="text"
                     name="email"
                     class="form-control"
-                    value="">
+                    value="<?= $email; ?>"
+                    >
                 </div>
               </div>
             <div class="col-12">

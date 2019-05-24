@@ -21,9 +21,9 @@ a:hover {
   color:inherit!important;
 }
 
-body {
+/* body {
   padding-bottom: 130px;
-}
+} */
 
 button {
   text-decoration:none;
@@ -37,17 +37,19 @@ ol,ul {
 
 img {
   width:100%;
+  color: linear-gradient(135deg,#f7554d 0,#f2682e 51%,#ce3568 99%);
 }
 
 h1 {
   font-family:'Montserrat 800',sans-serif;
   color:#f95543;
   font-weight:800;
+  font-size: 2em;
 }
 
 h2 {
   font-family:'Montserrat 800',sans-serif;
-  font-size:2em;
+  font-size:1.5em;
   color:#f95543;
   font-weight:800 ;
 }
@@ -57,6 +59,7 @@ h3 {
   margin-top:50px;
   font-weight:800;
   color:#f95543;
+  font-size: 0.8em;
 }
 
 p {
@@ -70,7 +73,6 @@ footer {
   width:100%;
   background-color:#ebccb6;
   color:#e85151;
-  border-radius:60% 60% 0 0;
   position:absolute;
   bottom:0;
 }
@@ -80,13 +82,14 @@ footer {
   font-family:'Montserrat 400',sans-serif;
   color:#fff;
   padding:10px;
-  border-radius:30px;
+  border-radius:20px;
   background:linear-gradient(135deg,#f7554d 0,#f2682e 51%,#ce3568 99%);
 }
 
 .btn {
   color:#e85151;
 }
+
 
 .contacto a {
   color:#e85151;
@@ -98,15 +101,28 @@ footer {
 .container {
   width:95%;
   margin:auto;
-/* margin-bottom:20px */
+  padding: 5% 1% 20% 1%;
 }
 
-.container-general{
-  border: solid 2px red;
+
+.container_producto{
+  margin-top: 10%;
+  margin-bottom: 20%;
+  padding: 5%;
+}
+
+.img_prod {
+  /* margin: auto; */
+  padding: 20%;
+}
+
+.prod_desc {
+  margin-top: 5px;
+  padding: 10%;
 }
 
 .fa {
-  font-size:50px;
+  font-size:2em;
   text-decoration:none;
   text-align:center;
 }
@@ -120,8 +136,8 @@ footer {
 }
 
 .logo_JM {
-  width:80px;
-  height:70px;
+  width:40%;
+  height:25%;
   margin-left:20px;
 }
 
@@ -134,7 +150,7 @@ footer {
   height: 100vh;
   max-height:950px;
   color:#fff;
-  font-weight:700;
+  font-weight:800;
   position:relative;
   z-index: 50;
   display:inline-flex;
@@ -146,15 +162,10 @@ footer {
 .titulo_recepcion {
   position:absolute;
   font-size:2.5em;
-  margin:10% 57% 0 5%;
-  text-shadow:2px 2px 4px #fff
+  margin:55% 50% 0 5%;
 }
 
-@media (max-width:600px) {
-  .titulo_recepcion {
-    bottom:15vh;
-    margin:0 5% 0 5% };
-  }
+
 
   /* -------------------------Navbar------------------------- */
 
@@ -303,9 +314,9 @@ footer {
 }
 
 .logofoot {
-  margin-top:5%;
-  height:80px;
-  width:80px;
+  margin-top:8%;
+  height:50%;
+  width:15%;
 }
 
 .social a {
@@ -314,4 +325,32 @@ footer {
   padding:5px;
   display:inline-flex;
   justify-content:center;
+  height:10%;
 }
+
+}
+
+
+@media (min-width: 575px) {
+  .titulo_recepcion {
+    bottom:15vh;
+    margin:5% 50% 5% 5%};
+
+  .container_producto{
+    margin-top: 5%;
+    margin-bottom: 20%;
+    padding: 4%;}
+  }
+
+
+
+  @media (min-width: 900px) {
+    .titulo_recepcion {
+      bottom:15vh;
+      margin:30% 50% 10% 0% };
+
+    .container_producto{
+      margin-top: 0%;
+      margin-bottom: 40%;
+      padding: 5%;}
+    }
