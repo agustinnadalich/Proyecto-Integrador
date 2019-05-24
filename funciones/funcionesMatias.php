@@ -2,6 +2,16 @@
 //FUNCION PARA VALIDAR LOS CAMPOS DE LA REGISTARCION
 	session_start();
 	define('ALLOWED_IMAGE_FORMATS', ['jpg', 'jpeg', 'png', 'gif']);
+
+	//si esta seteada la cookie y si no esta logueado, lo pongo en sesion
+	if ( isset($_COOKIE['userLoged']) && !isLogged() ) {
+		// Busco al usuario por el email que tengo almacenado en la cookie
+		$theUser = getUserByEmail($_COOKIE['userLoged']);
+
+		// Guardo en sesión al usuario que bisqué anteiormente
+		$_SESSION['userLoged'] = $theUser;
+	}
+
 function registerValidate(){
 
   // global $name;
@@ -50,7 +60,7 @@ function registerValidate(){
   }
 
 	if ( $avatar['error'] != UPLOAD_ERR_OK ) {
-		$errores["avatar"] = "Imagen no subidaaaaaa";
+		$errores["avatar"] = "Imagen no subida";
 	} else {
 		$ext = pathinfo($avatar["name"], PATHINFO_EXTENSION);
 

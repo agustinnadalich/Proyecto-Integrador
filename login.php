@@ -25,6 +25,10 @@ if ($_POST) {
     // logueamos al usuario
     $userToLogin = getUserByEmail($email);
 
+    if ( isset($_POST["recordarUser"]) ) {
+      setcookie("userLoged", $email, time() + 3000);
+    }
+
     login($userToLogin);
 
     unset($userToLogin["pass"]);
