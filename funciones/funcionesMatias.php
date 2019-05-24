@@ -6,10 +6,10 @@
 	//si esta seteada la cookie y si no esta logueado, lo pongo en sesion
 	if ( isset($_COOKIE['userLoged']) && !isLogged() ) {
 		// Busco al usuario por el email que tengo almacenado en la cookie
-		$theUser = getUserByEmail($_COOKIE['userLoged']);
+		$usuario = getUserByEmail($_COOKIE["userLoged"]);
 
 		// Guardo en sesión al usuario que bisqué anteiormente
-		$_SESSION['userLoged'] = $theUser;
+		$_SESSION["userLoged"] = $usuario;
 	}
 
 function registerValidate(){
