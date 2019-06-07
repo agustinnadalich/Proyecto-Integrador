@@ -6,6 +6,13 @@
 $pagetitle= "PERFIL";
 require_once 'partials/head.php';
 
+if ( !isLogged() ) {
+  header("Location: login.php");
+  exit;
+}
+
+  // var_dump($allUsers[$thePosition]);
+
 // Traer de session
 $paisDelUser = "";
 

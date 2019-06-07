@@ -109,22 +109,24 @@ function changeInfo(){
       }}
 
 
-    $user['name']= trim($_POST['name']);
-    $user['username']= trim($_POST['username']);
-    $user['pais']= trim($_POST['pais']);
+    $theUser['name']= trim($_POST['name']);
+    $theUser['username']= trim($_POST['username']);
+    $theUser['pais']= trim($_POST['pais']);
     // $theUser['pass']= password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
     // unset($_POST['rePass']);
     // $theUser['pais']= $_POST(['pais']);
 
-    $allUsers[$thePosition] = $user;
+    $allUsers[$thePosition] = $theUser;
 
-    $_SESSION["userLoged"] = $user;
+    $_SESSION["userLoged"] = $theUser;
 
     $allUsersJson=json_encode($allUsers);
 
     file_put_contents(dirname(__DIR__, 1) . '/data/users.json', $allUsersJson);
 
-    // header("location: profile.php");
+    header("location: profile.php");
+
+
 
     return $user;
 

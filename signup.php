@@ -4,6 +4,10 @@ require_once 'funciones/funcionesMatias.php';
 require_once 'funciones/controller-json.php';
 // TODO: Tenemos que agregar la arquitectura de la pagina. (El archivo php con todas las funciones)
 
+if ( isLogged() ) {
+  header("Location: profile.php");
+  exit;
+}
 
  ?>
 
