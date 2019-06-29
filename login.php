@@ -8,6 +8,7 @@ $pagetitle= "LOGIN";
 require_once 'partials/head.php';
 
 
+
 if ( isLogged() ) {
   header("Location: profile.php");
   exit;

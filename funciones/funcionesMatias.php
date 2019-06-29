@@ -137,12 +137,12 @@ function loginValidate(){
   } elseif ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
     $errores["email"] = "Introducí un formato de email válido";
   } elseif ( !mailExist($email) ) {
-    $errores["email"] = "Las credenciales no coinciden";
+    $errores["email"] = "Las credenciales no coinciden- mail no existe";
   } else {
     $usuario = getUserByEmail($email);
     // verifico el pass que puso con el del usuario que saque recien, que sé que existe y no tiene errores
-    if ( !password_verify($pass, $usuario["pass"]) ) {
-      $errores["pass"] = "Las credenciales no coinciden";
+    if ( !password_verify($pass, $usuario['pass']) ) {
+      $errores["pass"] = "Las credenciales no coinciden mal pass";
     }
   }
 
