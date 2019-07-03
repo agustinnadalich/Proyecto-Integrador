@@ -11,11 +11,28 @@
 //   }
 require_once 'conexion.php';
 
+
+//Migra los usuarios registrados en el .json a la DB. > No funciona
+
+// $filename = "users.json";
+// $data = file_get_contents($filename); // Lee el archivo JSON
+// $array = json_decode($data, true); // Convierte el JSON a un array asociativo
+// //Recorro el array de usuarios y si el email no está en la DB, inserto el registro el la tabla users.
+// foreach($array as $row)
+//           {
+//            $sql = //IF NOT EXISTS (SELECT * FROM users WHERE email = $email)
+//            "INSERT INTO 'users ('id', 'name', 'username', 'email', 'pass', 'pais', 'avatar') VALUES ('".$row["id"]."', '".$row["name"]."',  '".$row["username"]."', '".$row["email"]."', '".$row["pass"]."', '".$row["pais"]."','".$row["avatar"]."');
+
+
+
+
+
+
 // CON MYSQL
 function getAllUsers(){
 global $base;
   try {
-    //quiero todos los autos, con su chofer y la cantidad de características de cada auto
+    //quiero todos los users.
     $consulta = $base->query("SELECT * from users");
   } catch(PDOException $error) {
     die('Error de base de datos');
@@ -72,7 +89,8 @@ global $base;
 
         $name= trim($_POST['name']);
         $username= trim($_POST['username']);
-        $email= trim($_POST['email']);
+        $email_trim= trim($_POST["email"]);
+        $email= strtolower($email_trim);
         $pass= password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
         unset($_POST['rePass']);
         $pais= trim($_POST['pais']);

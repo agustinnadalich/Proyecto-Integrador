@@ -21,7 +21,8 @@ function registerValidate(){
 	// global $avatar;
   $name = trim($_POST["name"]);
   $username = trim($_POST["username"]);
-  $email = trim($_POST["email"]);
+	$email_trim= trim($_POST["email"]);
+	$email= strtolower($email_trim);
   $pass = trim($_POST["pass"]);
   $rePass = trim($_POST["rePass"]);
 	$avatar = $_FILES["avatar"];
@@ -129,7 +130,8 @@ function isLogged() {
 
 function loginValidate(){
   $errores= [];
-  $email= trim($_POST["email"]);
+	$email_trim= trim($_POST["email"]);
+	$email= strtolower($email_trim);
   $pass= trim($_POST["pass"]);
 
   if ( empty($email) ) {
