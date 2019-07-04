@@ -21,7 +21,8 @@ function registerValidate(){
 	// global $avatar;
   $name = trim($_POST["name"]);
   $username = trim($_POST["username"]);
-  $email = trim($_POST["email"]);
+  $email_trim = trim($_POST["email"]);
+	$email = strlower($email_trim);
   $pass = trim($_POST["pass"]);
   $rePass = trim($_POST["rePass"]);
 	$avatar = $_FILES["avatar"];
@@ -129,7 +130,8 @@ function isLogged() {
 
 function loginValidate(){
   $errores= [];
-  $email= trim($_POST["email"]);
+	$email_trim = trim($_POST["email"]);
+	$email = strlower($email_trim);
   $pass= trim($_POST["pass"]);
 
   if ( empty($email) ) {
@@ -137,12 +139,12 @@ function loginValidate(){
   } elseif ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
     $errores["email"] = "Introducí un formato de email válido";
   } elseif ( !mailExist($email) ) {
-    $errores["email"] = "Las credenciales no coinciden- mail no existe";
+    $errores["email"] = "Las credenciales no coinciden";
   } else {
     $usuario = getUserByEmail($email);
     // verifico el pass que puso con el del usuario que saque recien, que sé que existe y no tiene errores
     if ( !password_verify($pass, $usuario['pass']) ) {
-      $errores["pass"] = "Las credenciales no coinciden mal pass";
+      $errores["pass"] = "Las credenciales no coinciden";
     }
   }
 

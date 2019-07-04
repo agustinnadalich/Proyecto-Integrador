@@ -50,6 +50,13 @@ $paises = [
 
 		$errores = registerValidate();
 		$paisDePost = $_POST["pais"];
+    $name = trim($_POST["name"]);
+    $username = trim($_POST["username"]);
+    $email_trim = trim($_POST["email"]);
+  	$email = strlower($email_trim);
+    $pass = trim($_POST["pass"]);
+    $rePass = trim($_POST["rePass"]);
+    $avatar = $_FILES["avatar"];
 
 		// si todo esta ok
 		if (count($errores) == 0) {

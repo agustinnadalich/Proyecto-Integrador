@@ -72,7 +72,8 @@ global $base;
 
         $name= trim($_POST['name']);
         $username= trim($_POST['username']);
-        $email= trim($_POST['email']);
+        $email_trim = trim($_POST["email"]);
+        $email = strlower($email_trim);
         $pass= password_hash(trim($_POST['pass']), PASSWORD_DEFAULT);
         unset($_POST['rePass']);
         $pais= trim($_POST['pais']);

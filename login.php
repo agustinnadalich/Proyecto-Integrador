@@ -18,6 +18,7 @@ $erroresLogin=[];
 $email="";
 
 if ($_POST) {
+
   $email = trim($_POST["email"]);
 
   $erroresLogin = loginValidate();
@@ -76,7 +77,7 @@ if ($_POST) {
                     type="text"
                     name="email"
                     class="form-control"
-                    value="">
+                    value="<?php echo $email; ?>" >
                 </div>
               </div>
             <div class="col-12">
